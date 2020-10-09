@@ -99,6 +99,7 @@ header#site-header {
 	}
 	.primary-menu ul {
 		background: $blue;
+		z-index: 2;
 		&:after {	   
 		    border-bottom-color: $blue;
 		}
@@ -111,6 +112,9 @@ header#site-header {
 	    opacity: 0.7;
 	}
 	.sub-menu {
+		a {
+			text-align: left;
+		}
 		a:hover, .current-menu-item {
 		    opacity: 0.7;
 		}

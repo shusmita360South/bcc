@@ -181,7 +181,7 @@ class Add_Settings_Field {
 		);
 		add_settings_field(
 			'event_header_image',
-			'<label>' . __( 'Event Header Image' , 'event_header_image' ) . '</label>',
+			'<label>' . __( 'Page Header Image' , 'event_header_image' ) . '</label>',
 			array( $this, 'media_field' ),
 			'general',
 			'contact',

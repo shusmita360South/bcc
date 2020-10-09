@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Gallery
+ * Template Name: Page News
  *
  *
  * @package WordPress
@@ -10,7 +10,7 @@
 
 
 get_header();
-$galleries = get_gallery();
+$peoples = get_people();
 ?>
 <section class="page-default container">
 	<div class="">
@@ -20,20 +20,20 @@ $galleries = get_gallery();
 	/* Start the Loop */
 	while ( have_posts() ) :
 		the_post();
-		get_template_part( 'template-parts/content/content', 'pagecontent' );
+		//get_template_part( 'template-parts/content/content', 'pagecontent' );
 	endwhile; // End of the loop.
 	?>
 
-	<section class="gallery-archive section-padding-tb light-bg">
+	<section class="peoples-archive section-padding-tb light-bg">
 		<div class="grid-container">
 			<div uk-grid>
 				
-				<?php if ($galleries->have_posts()) :
+				<?php if ($peoples->have_posts()) :
 					$count = 1;
 					
-						while ( $galleries->have_posts() ) {
-							$galleries->the_post();
-							get_template_part( 'template-parts/content/content', 'gallery' );
+						while ( $peoples->have_posts() ) {
+							$peoples->the_post();
+							get_template_part( 'template-parts/content/content', 'people' );
 						}
 						wp_reset_postdata(); 
 				endif;?>

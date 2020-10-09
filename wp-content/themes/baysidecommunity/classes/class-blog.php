@@ -240,4 +240,25 @@ function get_homePosts($blogIds) {
 
 	return new WP_Query( $array );
 }
+/**
+ * Get leader list pages
+ *
+ */
+function dropdown_leader_page() {
+	$leader_post_type = 'people';
+	$array = array(
+		'post_type' => $leader_post_type ,
+		'posts_per_page' =>  -1,
+		'orderby'        => 'menu_order',
+		'order'          => 'ASC'
+	);
+	$posts = get_posts($array);
+
+	$option = [];
+	foreach ($posts as $post) {
+		$option[$post->ID] = array($post->post_title);
+	}
+
+	return $option;
+}
 

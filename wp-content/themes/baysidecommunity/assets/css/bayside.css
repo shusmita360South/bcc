@@ -1084,6 +1084,7 @@ header#site-header .current-menu-parent > a, header#site-header .current-menu-pa
 }
 header#site-header .primary-menu ul {
   background: #0072BC;
+  z-index: 2;
 }
 header#site-header .primary-menu ul:after {
   border-bottom-color: #0072BC;
@@ -1093,6 +1094,9 @@ header#site-header .primary-menu li.current-menu-item > a, header#site-header .p
 }
 header#site-header .primary-menu li.current-menu-item > a:hover, header#site-header .primary-menu li.current-menu-item > .link-icon-wrapper > a:hover, header#site-header .primary-menu li.current-menu-item > a:focus, header#site-header .primary-menu li.current-menu-item > .link-icon-wrapper > a:focus {
   opacity: 0.7;
+}
+header#site-header .sub-menu a {
+  text-align: left;
 }
 header#site-header .sub-menu a:hover, header#site-header .sub-menu .current-menu-item {
   opacity: 0.7;
@@ -1695,11 +1699,10 @@ header#site-header .toggle-inner .toggle-text {
 }
 .program-card .content {
   background: #FFF;
-  padding-bottom: 60px;
+  padding: 20px 30px 60px 30px;
 }
 .program-card .content h4 {
-  padding: 20px 20px;
-  border-bottom: 1px solid #E6E6E6;
+  padding: 0;
   margin-bottom: 0;
 }
 .program-card .content .info {
@@ -1742,7 +1745,7 @@ header#site-header .toggle-inner .toggle-text {
   margin-right: 5px;
 }
 .program-card .content .intro {
-  padding: 15px 20px;
+  padding: 15px 0px;
 }
 .program-card .content .more-info-bottom {
   position: absolute;
@@ -1754,14 +1757,9 @@ header#site-header .toggle-inner .toggle-text {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   bottom: 0;
   width: 100%;
   height: 60px;
-  border-top: 1px solid #E6E6E6;
 }
 .program-card .content .more-info-bottom a {
   font-weight: 500;
@@ -1792,7 +1790,7 @@ header#site-header .toggle-inner .toggle-text {
 }
 .program-card.connect-program-card .subtitle {
   border-bottom: 1px solid #E6E6E6;
-  padding: 0 20px 20px 20px;
+  padding: 0 0px 20px 0px;
 }
 .program-card.connect-program-card .more-info-bottom {
   display: -webkit-box;
@@ -1841,9 +1839,6 @@ header#site-header .toggle-inner .toggle-text {
 .program-card.people-card .content {
   padding-bottom: 70px;
 }
-.program-card.people-card .subtitle {
-  padding: 0px 20px;
-}
 .program-card.people-card .uk-icon-button {
   background: #0072BC;
   color: #FFF;
@@ -1856,9 +1851,6 @@ header#site-header .toggle-inner .toggle-text {
   bottom: 10px;
 }
 
-.program-card.blog-card .info {
-  padding-left: 20px;
-}
 .program-card.blog-card .info span {
   width: 100%;
   text-align: left;
@@ -2429,10 +2421,7 @@ header#site-header .toggle-inner .toggle-text {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin-top: 10px;
 }
 .blogdate i {
   position: relative;

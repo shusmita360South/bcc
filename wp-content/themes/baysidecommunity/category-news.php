@@ -12,48 +12,58 @@ get_header();
 
 ?>
 <?php
+
 	$term = get_queried_object();
+	$term_id = $term->term_id;
+	$taxonomy_name = $term->taxonomy;
+
+	$subtitle = get_term_meta($term_id, 'subtitle', true);
+
+	$termchildren = get_term_children( $term_id, $taxonomy_name );
 
 	//echo "<pre>"; print_r($term);echo "</pre>";
 
-	$peopleHeaderImageUrl = get_option('event_header_image');
-	$peopleHeaderImageId = attachment_url_to_postid($peopleHeaderImageUrl);
+	$blogHeaderImageUrl = get_option('event_header_image');
+	$blogHeaderImageId = attachment_url_to_postid($blogHeaderImageUrl);
 
-	$peopleHeader = wp_get_attachment_image_src($peopleHeaderImageId, '1920x420');
+	$blogHeader = wp_get_attachment_image_src($blogHeaderImageId, '1920x420');
 
 
 ?>
 <?php 
-$peoples = get_people();
+$tags = get_tags();
 
 
 ?>
-<?php $totalCount = $peoples->post_count;?>
+
 
 <section class="page-banner container">	
 	<div class="page-banner-image">				
 		<figure>
-			<img src="<?php echo $peopleHeader[0];?>" alt="<?php the_title() ?>">
+			<img src="<?php echo $blogHeader[0];?>" alt="<?php the_title() ?>">
 		</figure>	
 	</div>
 	<div class="page-banner-content">		
-		<h1 class="">Our Team</h1>
+		<h1 class="">Blog</h1>
 	</div>
 </section>
 
-<section class="peoples-archive section-padding-tb light-bg container">
+<section class="blogs-archive section-padding-tb light-bg container">
 	<div class="grid-container">
 		<div uk-grid>
 			
-			<?php if ($peoples->have_posts()) :
-				$count = 1;
-				
-					while ( $peoples->have_posts() ) {
-						$peoples->the_post();
-						get_template_part( 'template-parts/content/content', 'people' );
-					}
-					wp_reset_postdata(); 
-			endif;?>
+			
+			<?php
+				if ( have_posts() ) {
+					// Load podcast loop.
+					while ( have_posts() ) {
+						the_post(); 
+						get_template_part( 'template-parts/content/content', 'blog' );
+						
+					 }
+				}
+				wp_reset_postdata(); 
+			?>
 		</div>		
 	</div>		
 		

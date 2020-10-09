@@ -49,7 +49,7 @@
 			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-1-2@xl nav-outer">
 				<div uk-grid>
 					<div class="uk-width-1-1 uk-width-1-3@s">
-						<p class="title">Connect with God</p>
+						<p class="title">About Us</p>
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'baysidecommunity' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 							<ul class="footer-menu reset-list-style">
@@ -68,7 +68,7 @@
 						</nav><!-- .site-nav -->
 					</div>
 					<div class="uk-width-1-1 uk-width-1-3@s">
-						<p class="title">Connect with People</p>
+						<p class="title">How We Care</p>
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'baysidecommunity' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 							<ul class="footer-menu reset-list-style">
@@ -84,7 +84,7 @@
 						</nav><!-- .site-nav -->
 					</div>
 					<div class="uk-width-1-1 uk-width-1-3@s">
-						<p class="title">Connect with Church</p>
+						<p class="title">Get Involved</p>
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'baysidecommunity' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 							<ul class="footer-menu reset-list-style">
@@ -113,7 +113,7 @@
 			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-1-2@xl nav-outer">
 				<div uk-grid>
 					<div class="uk-width-1-1 uk-width-1-3@s">
-						<p class="title">Connect with Community</p>
+						<p class="title">Donate</p>
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'baysidecommunity' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 							<ul class="footer-menu reset-list-style">
@@ -129,7 +129,7 @@
 						</nav><!-- .site-nav -->
 					</div>
 					<div class="uk-width-1-1 uk-width-1-3@s">
-						<p class="title">Help</p>
+						<p class="title">Contact Us</p>
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'baysidecommunity' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 							<ul class="footer-menu reset-list-style">

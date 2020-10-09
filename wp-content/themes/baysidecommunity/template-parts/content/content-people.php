@@ -1,8 +1,8 @@
 <?php
 
 ?>
-<div class="item event-card-outer uk-width-1-1 uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l">
-	<div class="event-card connect-group-card people-card">
+<div class="item program-card-outer uk-width-1-1 uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l">
+	<div class="program-card connect-group-card people-card">
 		<div class="image">
 			<?php the_post_thumbnail( '460x260' ); ?>	
 		</div>
