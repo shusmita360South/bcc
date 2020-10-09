@@ -1,0 +1,261 @@
+/************************
+ * Standard Sections
+ ************************/
+/* Header / Menu */
+
+	
+header#site-header {
+
+	
+	&.scrolled {
+		
+			border-bottom: 1px solid $grid-border;
+		
+	}
+	
+	.header-titles {
+		width: 315px;
+		img {
+			@media only screen and (max-width: 1500px) {
+				width: 220px;
+			}
+			@media only screen and (max-width: 1400px) {
+				width: 200px;
+			}
+		}
+	}
+	.header-inner {
+
+    	padding: 0;
+    	@media only screen and (max-width: 1500px) {
+    		padding-left: 15px;
+    	}
+   	}
+	.header-titles-wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+	}
+	a {
+		&:hover {
+			text-decoration: none !important;
+		}
+	}
+	.primary-menu {
+		> li {
+			@media only screen and (max-width: 1500px) {
+				margin: 0.8rem 0 0 .5rem;
+			}
+			&.menu-item-has-children {
+				> a {
+
+    				font-size: 16px;
+    				
+    				@media only screen and (max-width: 1550px) {
+    					padding-right: 1.3rem;
+    				}
+    				@media only screen and (max-width: 1400px) {
+    					font-size: 15px;
+    				}
+				}
+			}
+			&:hover {
+				.icon {
+					color: $blue;
+				}
+			}
+		}
+		a {
+			font-size: 16px;
+			font-weight: bold;
+  			letter-spacing: 0;
+  			text-decoration: none;
+  			@media only screen and (max-width: 1400px) {
+				font-size: 15px;
+			}
+		}
+		.icon{
+			right: 0rem;
+			top: calc(50% - 0.5rem);
+			width: 1rem;
+			&:after {
+			    height: 0.2rem;
+			    width: 0.5rem;
+			}
+			&:before {
+			    height: 0.5rem;
+			    width: 0.2rem;
+			}
+		}
+	}
+	.current-menu-parent {
+		> a, .icon {
+			color: $blue;
+		}
+		
+	}
+	.primary-menu ul {
+		background: $blue;
+		&:after {	   
+		    border-bottom-color: $blue;
+		}
+	}
+	.primary-menu li.current-menu-item > a, .primary-menu li.current-menu-item > .link-icon-wrapper > a {
+	    text-decoration: none;
+
+	}
+	.primary-menu li.current-menu-item > a:hover, .primary-menu li.current-menu-item > .link-icon-wrapper > a:hover, .primary-menu li.current-menu-item > a:focus, .primary-menu li.current-menu-item > .link-icon-wrapper > a:focus {
+	    opacity: 0.7;
+	}
+	.sub-menu {
+		a:hover, .current-menu-item {
+		    opacity: 0.7;
+		}
+		
+
+	}
+	.header-right-buttons {
+		display: flex;
+		.church-online {
+			height: 100px;
+			line-height: 100px;
+			background: $yellow;
+			color: $white;
+			font-size: 16px;
+			font-weight: bold;
+			letter-spacing: 0;
+			text-decoration: none;
+			padding: 0 30px;
+			margin-left: 20px;
+			&:hover {
+				opacity: .9;
+			}
+			@media only screen and (max-width: 1550px) {
+				padding: 0 20px;
+				margin-left: 0px;
+			}
+			@media only screen and (max-width: 1350px) {
+				padding: 0 10px;
+			}
+			@media only screen and (max-width: 1199px) {
+				opacity: 0;
+				height: 70px;
+			}
+			.uk-icon {
+				margin-right: 8px;
+				top: 2px;
+				position: relative;
+				svg {
+					width: 15px;
+					height: 15px;
+					
+				}
+			}
+		}
+		.giving {
+			height: 100px;
+			line-height: 100px;
+			background: $blue;
+			color: $white;
+			font-size: 16px;
+			font-weight: bold;
+			letter-spacing: 0;
+			text-decoration: none;
+			padding: 0 30px;
+			&:hover {
+				opacity: .9;
+			}
+			@media only screen and (max-width: 1550px) {
+				padding: 0 20px;
+			}
+			@media only screen and (max-width: 1350px) {
+				padding: 0 10px;
+			}
+			@media only screen and (max-width: 1279px) {
+				display: none;
+			}
+			.uk-icon {
+				margin-right: 8px;
+				top: 2px;
+				position: relative;
+				svg {
+					width: 15px;
+					height: 15px;
+					path {
+						fill: #fff;
+					}
+				}
+			}
+			
+		}
+	}
+	.header-inner .toggle, .nav-toggle {
+		width: auto;
+		padding: 0 15px;
+		&:hover {
+			border: 0px solid #00ADEE;
+			.toggle-text { 
+				color: $blue
+			}
+		}
+	}
+	.toggle-inner {
+	    flex-direction: column;
+	    height: auto;
+	}
+	.nav-toggle .toggle-icon, .nav-toggle svg {
+    	height: 1.5rem;
+    }
+    .toggle-inner .toggle-text {
+    	position: relative;
+    }
+
+
+}
+.only-mobile {
+    	display: none;
+    	@media only screen and (max-width: 959px) {
+    		display: inline-block;
+    	}	
+    }
+.menu-modal {
+	button {
+		&:hover {
+			border: 0px solid #00ADEE;
+		}
+	}
+	.close-nav-toggle {
+		padding: 2rem 0;
+		.toggle-text {
+			opacity: 0;
+		}
+		svg {
+			margin-right: 15px;
+		}
+	}
+	a {
+    	padding: 15px;
+    }
+    .modal-menu li {
+    	border-color: transparent;
+   	}
+    .modal-menu > li > a, .modal-menu > li > .ancestor-wrapper > a {
+    	font-size: 1.3rem;
+    }
+    .modal-menu ul li a {
+	    font-size: 19px;
+	}
+    button.sub-menu-toggle {
+	    border-left: 0 solid #dedfdf;
+	    margin: 0;
+	    padding: 0 15px;
+	}
+	button.sub-menu-toggle svg {
+	    width: 1rem;
+	}
+}
+
+

@@ -61,7 +61,7 @@ Thumbs.db
 # "plugins" directory
 # "themes" directory
 wp-content/*
-wp-content/themes/baysidechurch/node_modules/*
+wp-content/themes/baysidecommunity/node_modules/*
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/

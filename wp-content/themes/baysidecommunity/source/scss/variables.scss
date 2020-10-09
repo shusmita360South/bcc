@@ -1,0 +1,88 @@
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+// Global variables
+// ========================================================================
+
+//
+// Typography
+//
+$text-color:			#505050; //TBA
+$text-color-body:		#505050; //TBA
+$text-color-light:		#A3A3A3; //TBA
+$white:					#FFF; 		
+
+
+$red:					#ED1C24;  //TBA
+$blue: 					#0072BC; 
+$yellow:				#FAA421;//TBA
+$green: 				#00A550;
+$pink:					#EC008C;//TBA
+$purple:				#7E3F97;//TBA
+$facebookblue:			#4267B2;//TBA
+
+
+$blue2:					#00ADEE;
+$green2:                #71BE44;
+$orange:				#F79252;
+
+
+//
+// Colors
+//
+
+
+$dark-bg: 				#001726; 
+$light-bg: 				#F3F3F3;  //TBA
+$light-blue-bg:			#EAF9FF;
+
+$grid-border:			#E6E6E6;
+
+
+//
+// category Colors
+//
+
+//
+//font
+//
+
+$font: 	'HelveticaNowDisplay';
+$font2: 	'Gilroy';
+
+
+$section-padding-tb-desktop: 80px;  
+$section-padding-tb-tablet: 60px;   
+$section-padding-tb-mobile: 40px;   
+$section-padding-tb-small: 40px;
+
+$mobile-padding-lr: 15px;
+$mobile-menu-trigger:	960px; //=======TBA
+
+.transition0 {
+	transition: all 0s ease-in-out;
+	-webkit-transition: all 0s ease-in-out;
+	-o-transition: all 0s ease-in-out;
+}
+.transition300ms {
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+.transition500ms {
+	transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+}
+.transition1000ms {
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+}
+
+.text-shadow {
+	text-shadow: 0 0 3px #E3367F;
+}
