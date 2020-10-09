@@ -1,0 +1,80 @@
+/*
+!wp-content/
+.htaccess
+
+!.gitignore
+!.editorconfig
+!readme.md
+
+
+~*
+
+# do not ignore gulp files
+!gulpfile.js
+!package.json
+!package-lock.json
+
+# ignore uploads but not theme images
+!img/
+img/site/*
+img/video/*
+
+# do not ignore generated theme files
+!css/
+!js/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins" directory
+# "plugins" directory
+# "themes" directory
+wp-content/*
+wp-content/themes/baysidechurch/node_modules/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+wp-content/plugins/wordfence/tmp/*
+
+# ignore specific themes
+wp-content/themes/twenty*/
+wp-content/themes/baysidechurch/
+
+# ignore node/grunt dependency directories
+node_modules/*
+
+.sass-cache
