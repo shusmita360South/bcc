@@ -15,7 +15,7 @@
 	<div class="footer-inner grid-container">
 
 		<div uk-grid>
-			<div class="uk-width-1-1 uk-width-1-1@s uk-width-1-3@m uk-width-1-3@l uk-width-1-2@xl">
+			<div class="uk-width-1-1 uk-width-1-1@s uk-width-1-3@m uk-width-1-3@l uk-width-2-5@xl">
 				<div class="site-title faux-heading"><a href="/"><img src="/img/logo-white.svg" width="240"/></a></div>
 				<div class="widget-2">
 					<?php dynamic_sidebar( 'sidebar-2' ); ?>
@@ -46,7 +46,7 @@
 				</nav><!-- .footer-social-wrapper -->
 
 			</div>
-			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-1-2@xl nav-outer">
+			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-3-5@xl nav-outer">
 				<div uk-grid>
 					<div class="uk-width-1-1 uk-width-1-3@s">
 						<p class="title">About Us</p>
@@ -104,13 +104,13 @@
 		</div><!-- uk-grid -->
 
 		<div uk-grid>
-			<div class="uk-width-1-1 uk-width-1-1@s uk-width-1-3@m uk-width-1-3@l uk-width-1-2@xl">
+			<div class="uk-width-1-1 uk-width-1-1@s uk-width-1-3@m uk-width-1-3@l uk-width-2-5@xl">
 				<div class="site-title faux-heading"><a href="/"><img src="/img/acnc-logo.png" width="62"/></a></div>
 				<div class="widget-1 uk-margin-medium-top">
 					<?php dynamic_sidebar( 'sidebar-1' ); ?>
 				</div>
 			</div>
-			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-1-2@xl nav-outer">
+			<div class="uk-visible@m uk-width-1-1 uk-width-2-3@s uk-width-2-3@m uk-width-2-3@l uk-width-3-5@xl nav-outer">
 				<div uk-grid>
 					<div class="uk-width-1-1 uk-width-1-3@s">
 						<p class="title">Donate</p>

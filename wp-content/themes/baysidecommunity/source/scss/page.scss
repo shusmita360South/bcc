@@ -255,10 +255,16 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			@extend .transition500ms;
 		}
 		a {
 			display: block;
 			position: relative;
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
 		}
 		&:before {
 			content: "";
@@ -435,6 +441,9 @@
 			padding: 0;
 			margin-bottom: 10px;
 		}
+		p {
+			color: $text-color;
+		}
 	}
 	.subtitle {
 		border-bottom: 1px solid $grid-border;
@@ -443,7 +452,7 @@
 	.more-info-bottom {
 		display: flex;
 		border-top: 0px solid $grid-border;
-		a {
+		div {
 			width: 100%;
 			height: 100%;
 			text-align: left;
@@ -452,6 +461,18 @@
 			font-weight: bold;
 			&:hover {
 				color: $blue;
+			}
+		}
+	}
+	a {
+		&:hover {
+			.more-info-bottom {
+				div {
+					color: $blue;
+				}
+			}
+			p {
+				color: $text-color;
 			}
 		}
 	}
@@ -501,6 +522,19 @@
 		span {
 		    width: 100%;
 		    text-align: left;
+		}
+	}
+	p {
+		color: $text-color;
+	}
+	a{
+		&:hover {
+			h4 {
+				color: $blue;
+			}
+			p {
+				color: $text-color;
+			}
 		}
 	}
 }

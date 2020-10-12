@@ -10,7 +10,7 @@
   -o-transition: all 0.3s ease-in-out;
 }
 
-.transition500ms {
+.transition500ms, .block-1 .about_block img {
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -1268,7 +1268,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0.3s ease-in-out;
 }
 
-.transition500ms {
+.transition500ms, .block-1 .about_block img {
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -1601,6 +1601,12 @@ header#site-header .toggle-inner .toggle-text {
   display: block;
   position: relative;
 }
+.block-1 .about_block a:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+       -o-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .block-1 .about_block:before {
   content: "";
   position: absolute;
@@ -1788,6 +1794,9 @@ header#site-header .toggle-inner .toggle-text {
   padding: 0;
   margin-bottom: 10px;
 }
+.program-card.connect-program-card .content p {
+  color: #505050;
+}
 .program-card.connect-program-card .subtitle {
   border-bottom: 1px solid #E6E6E6;
   padding: 0 0px 20px 0px;
@@ -1799,7 +1808,7 @@ header#site-header .toggle-inner .toggle-text {
   display: flex;
   border-top: 0px solid #E6E6E6;
 }
-.program-card.connect-program-card .more-info-bottom a {
+.program-card.connect-program-card .more-info-bottom div {
   width: 100%;
   height: 100%;
   text-align: left;
@@ -1807,8 +1816,14 @@ header#site-header .toggle-inner .toggle-text {
   color: #00A550;
   font-weight: bold;
 }
-.program-card.connect-program-card .more-info-bottom a:hover {
+.program-card.connect-program-card .more-info-bottom div:hover {
   color: #0072BC;
+}
+.program-card.connect-program-card a:hover .more-info-bottom div {
+  color: #0072BC;
+}
+.program-card.connect-program-card a:hover p {
+  color: #505050;
 }
 
 .program-card.feature-card h4 {
@@ -1854,6 +1869,15 @@ header#site-header .toggle-inner .toggle-text {
 .program-card.blog-card .info span {
   width: 100%;
   text-align: left;
+}
+.program-card.blog-card p {
+  color: #505050;
+}
+.program-card.blog-card a:hover h4 {
+  color: #0072BC;
+}
+.program-card.blog-card a:hover p {
+  color: #505050;
 }
 
 .program-card.message-card.gallery-card .content {
@@ -2442,7 +2466,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0.3s ease-in-out;
 }
 
-.transition500ms {
+.transition500ms, .block-1 .about_block img {
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
