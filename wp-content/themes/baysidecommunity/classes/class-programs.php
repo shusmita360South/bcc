@@ -223,10 +223,11 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 					'icon'  => ''
 				)
 			);
+			
 			$body->register_section(
-				'filter',
+				'location',
 				array(
-					'label' => 'Filters',
+					'label' => 'Locations',
 					'icon'  => ''
 				)
 			);
@@ -253,7 +254,9 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 			$body->register_setting(
 				'body_logo'
 			);
-		
+			$body->register_setting(
+				'body_video'
+			);
 			$body->register_setting(
 				'body_externalbtnlink'
 			);
@@ -270,39 +273,15 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 			$body->register_setting(
 				'body_homefeatured'
 			);
-			/*$body->register_setting(
+			$body->register_setting(
 				'body_location'
-			);*/
+			);
 			$body->register_setting(
 				'body_contact'
 			);
 
 			$body->register_setting(
-				'body_startdate'
-			);
-			$body->register_setting(
-				'body_enddate'
-			);
-			$body->register_setting(
-				'body_starttime'
-			);
-			$body->register_setting(
-				'body_endtime'
-			);
-			$body->register_setting(
-				'body_multidate'
-			);
-			$body->register_setting(
-				'body_locationtitle'
-			);
-			$body->register_setting(
 				'body_map'
-			);
-			$body->register_setting(
-				'body_gender'
-			);
-			$body->register_setting(
-				'body_agegroup'
 			);
 			
 			
@@ -329,6 +308,15 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 		        	'type'    => 'image',
 		        	'section' => 'intro',
 		        	'label'   => esc_html__( 'Image' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
+			$body->register_control(
+		        'body_video',
+		        array(
+		        	'type'    => 'text',
+		        	'section' => 'intro',
+		        	'label'   => esc_html__( 'Video Iframe Embed Link' ),
 		        	'attr'    => array( 'class' => 'widefat' )
 		        )
 			);
@@ -385,76 +373,8 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 		        	
 		        )
 			);
-			$body->register_control(
-		        'body_startdate',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'Start Date. Must be in mm/dd/yyyy format - eg. 12/30/2020' ),
-		        	'attr'    => array( 'class' => 'widefat datepicker' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_enddate',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'End Date. Must be in mm/dd/yyyy format - eg. 12/30/2020' ),
-		        	'attr'    => array( 'class' => 'widefat datepicker' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_multidate',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'Multiple Date Text' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_starttime',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'Start Time' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_endtime',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'End Time' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_locationtitle',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'Location' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	
-		        )
-			);
-			$body->register_control(
-		        'body_map',
-		        array(
-		        	'type'    => 'text',
-		        	'section' => 'intro',
-		        	'label'   => esc_html__( 'Map Address' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	
-		        )
-			);
+			
+			
 			$body->register_control(
 		        'body_homefeatured',
 		        array(
@@ -468,38 +388,9 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 		        	)
 		        )
 			);
-			$body->register_control(
-		        'body_gender',
-		        array(
-		        	'type'    => 'select-group',
-		        	'section' => 'filter',
-		        	'label'   => esc_html__( 'Gender' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	'choices' => array(
-		        		'' => esc_html__( 'Male and Female' ),
-		        		'male' => esc_html__( 'Male' ),
-		        		'female' => esc_html__( 'Female' )
-		        	)
-		        )
-			);
-			$body->register_control(
-		        'body_agegroup',
-		        array(
-		        	'type'    => 'select-group',
-		        	'section' => 'filter',
-		        	'label'   => esc_html__( 'Age Group' ),
-		        	'attr'    => array( 'class' => 'widefat' ),
-		        	'choices' => array(
-		        		'0-18' => esc_html__( 'Under 18' ),
-		        		'18-30' => esc_html__( '18-30' ),
-		        		'30-40' => esc_html__( '30-40' ),
-		        		'40-50' => esc_html__( '40-50' ),
-		        		'50+' => esc_html__( 'Over 50' )
-		        	)
-		        )
-			);
+			
 
-			/*$body->register_control(
+			$body->register_control(
 		        'body_location',
 		        array(
 		        	'type'    => 'multilocation',
@@ -508,7 +399,7 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 		        	'attr'    => array( 'class' => 'widefat' ),
 
 		        )
-			);*/
+			);
 			
 			
 
@@ -563,9 +454,10 @@ function get_all_programs() {
 	return new WP_Query( $array );
 }
 
-function get_three_programs() {
+function get_three_programs($currentPost) {
 	$array = array(
 		'post_type'      => 'programs',
+		'post__not_in' => array ($currentPost),
 		'posts_per_page' =>  3,
 		'orderby'        => 'date',
 		'order'          => 'ASC'

@@ -539,6 +539,10 @@ form .uk-select:not([multiple]):not([size]) {
   color: #0072BC;
 }
 
+.blue2 {
+  color: #00ADEE;
+}
+
 .facebookblue {
   color: #4267B2;
 }
@@ -1052,7 +1056,7 @@ header#site-header .primary-menu > li.menu-item-has-children > a {
   }
 }
 header#site-header .primary-menu > li:hover .icon {
-  color: #0072BC;
+  color: #00ADEE;
 }
 header#site-header .primary-menu a {
   font-size: 16px;
@@ -1080,14 +1084,14 @@ header#site-header .primary-menu .icon:before {
   width: 0.2rem;
 }
 header#site-header .current-menu-parent > a, header#site-header .current-menu-parent .icon {
-  color: #0072BC;
+  color: #00ADEE;
 }
 header#site-header .primary-menu ul {
-  background: #0072BC;
+  background: #00ADEE;
   z-index: 2;
 }
 header#site-header .primary-menu ul:after {
-  border-bottom-color: #0072BC;
+  border-bottom-color: #00ADEE;
 }
 header#site-header .primary-menu li.current-menu-item > a, header#site-header .primary-menu li.current-menu-item > .link-icon-wrapper > a {
   text-decoration: none;
@@ -1151,7 +1155,7 @@ header#site-header .header-right-buttons .church-online .uk-icon svg {
 header#site-header .header-right-buttons .giving {
   height: 100px;
   line-height: 100px;
-  background: #0072BC;
+  background: #00ADEE;
   color: #FFF;
   font-size: 16px;
   font-weight: bold;
@@ -1197,7 +1201,7 @@ header#site-header .header-inner .toggle:hover, header#site-header .nav-toggle:h
   border: 0px solid #00ADEE;
 }
 header#site-header .header-inner .toggle:hover .toggle-text, header#site-header .nav-toggle:hover .toggle-text {
-  color: #0072BC;
+  color: #00ADEE;
 }
 header#site-header .toggle-inner {
   -webkit-box-orient: vertical;
@@ -1454,7 +1458,7 @@ header#site-header .toggle-inner .toggle-text {
 }
 
 .breadcrumbs-outer {
-  background: #00ADEE;
+  background: #0072BC;
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -1978,14 +1982,14 @@ header#site-header .toggle-inner .toggle-text {
   margin-left: 15px;
 }
 
-.program-item img {
+.program-item img, .program-item iframe {
   border-radius: 10px;
 }
 .program-item .page-banner-image img {
   border-radius: 0px;
 }
 .program-item .content-left {
-  padding-right: 30px;
+  padding-right: 70px;
 }
 @media only screen and (max-width: 639px) {
   .program-item .content-left {
@@ -1997,6 +2001,10 @@ header#site-header .toggle-inner .toggle-text {
 }
 .program-item .sideinfo {
   font-weight: 500;
+}
+.program-item .sideinfo .uk-accordion li + li {
+  border-top: 1px solid #E6E6E6;
+  padding-top: 20px;
 }
 .program-item .sideinfo span.block {
   display: block;
@@ -2025,6 +2033,8 @@ header#site-header .toggle-inner .toggle-text {
 .program-item .sideinfo iframe {
   margin-top: 3px;
   border-radius: 10px;
+  min-width: 372px;
+  min-height: 240.706px;
 }
 .program-item .sideinfo .card-share {
   display: -webkit-box;
@@ -2035,7 +2045,7 @@ header#site-header .toggle-inner .toggle-text {
 }
 .program-item .sideinfo .card-share .share-btn {
   background: #EAF9FF;
-  color: #0072BC;
+  color: #00ADEE;
   border-radius: 10px;
   padding: 10px 30px;
   display: inline-block;

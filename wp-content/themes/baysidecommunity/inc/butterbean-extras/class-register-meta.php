@@ -81,7 +81,9 @@ class VL_Meta_Register_Meta {
 		if ( 'multibutton' === $slug ) {
 			return INCLUDE_FOLDER . 'butterbean-extras/extensions/tmpl/control-multibutton.php';
 		}
-
+		if ( 'multilocation' === $slug ) {
+			return INCLUDE_FOLDER . 'butterbean-extras/extensions/tmpl/control-multilocation.php';
+		}
 		if ( 'feature_tiles' === $slug ) {
 			return INCLUDE_FOLDER . 'butterbean-extras/extensions/tmpl/control-feature-tiles.php';
 		}
@@ -140,6 +142,9 @@ class VL_Meta_Register_Meta {
 
 		require_once( INCLUDE_FOLDER . 'butterbean-extras/extensions/controls/class-control-technology.php' );
 		$butterbean->register_control_type( 'technology', 'ButterBean_Control_Technology' );
+
+		require_once( INCLUDE_FOLDER . 'butterbean-extras/extensions/controls/class-control-multilocation.php' );
+		$butterbean->register_control_type( 'multilocation', 'ButterBean_Control_Multilocation' );
 
 		require_once( INCLUDE_FOLDER . 'butterbean-extras/extensions/controls/class-control-review.php' );
 		$butterbean->register_control_type( 'review', 'ButterBean_Control_Review' );

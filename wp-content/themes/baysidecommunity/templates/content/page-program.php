@@ -12,47 +12,72 @@ $image_id = get_field('body_logo');
 $image_header = wp_get_attachment_image_src($image_id, '700x300');
 ?>
 
-<section class="event-item">
+<section class="program-item">
 	<div class="">
 		<?php get_template_part( 'template-parts/header/entry-header' ); ?>
 	</div>
 	<div class="grid-container-medium section-padding-tb">
 		<div uk-grid>
 			<div class="uk-width-1-1 uk-width-2-3@s content-left">
-				<img src="<?php echo $image_header[0] ?>" title="<?php the_title() ?>" alt="<?php the_title() ?>">
-				<h4 class="uk-margin-medium-top"><?php the_title() ?></h4>
-				<?php the_content() ?>
-				<a class="button btn-blue uk-margin-medium-top" href="<?php echo get_page_link(get_field('body_externalbtnlink')) ?>">Register Now</a>
+				
+				<?php if(get_field('body_video')):?>
+					<iframe width="700" height="315" src="<?php echo get_field('body_video')?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<?php else:?>
+					<img src="<?php echo $image_header[0] ?>" title="<?php the_title() ?>" alt="<?php the_title() ?>">
+				<?php endif;?>
+				<div class="uk-margin-medium-top">
+					<?php the_content() ?>
+				</div>
+				<a class="button btn-green uk-margin-medium-top" href="<?php echo get_page_link(get_field('body_externalbtnlink')) ?>">Register Now</a>
 			</div>
 			<div class="uk-width-1-1 uk-width-1-3@s sideinfo_outer">
 				<?php 
-				$locations = get_field('body_location');
-			?>
+					$locations = get_field('body_location');
+					//print_r($locations);
+				?>
 				<div class="sideinfo">
-					<span class="block">
-						<i class="blue" uk-icon="calendar"></i><?php echo date_format( date_create(get_field('body_startdate')),"D d M");?><br>
-						<?php echo get_field('body_starttime')."-".get_field('body_endtime');?>
-					</span>
-					<span class="block">
-						<i class="blue" uk-icon="clock"></i><?php echo get_field('body_starttime');?>
-					</span >
-					
-					<span class="block">
-						<i class="blue" uk-icon="location"></i><?php echo get_field('body_locationtitle');?>
-					</span>
-					<span class="block">
-						<i class="blue text">$</i><?php echo get_field('body_cost');?>
-
-					</span>
-					<?php if(get_field('body_map')):?>
-			            <iframe
-			              width="340"
-			              height="220"
-			              frameborder="0" style="border:0"
-			              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvavqTeZXc48iALmnGfypI6ZuJ1jNW-lE
-			                &q=<?php echo get_field('body_map');?>" allowfullscreen>
-			            </iframe>
-		            <?php endif;?>
+					<ul uk-accordion="collapsible: false">
+						<?php foreach ($locations as $location) :?>
+						<?php if($location['datetext']){
+								$date = $location['datetext'];
+							} else {
+								$date = date_format( date_create($location['date']),"D d M");
+							}
+						?>	
+						<li>
+							<a  class="uk-accordion-title" href="#">
+								<?php echo $location['heading'];?></a>
+					        <div class="uk-accordion-content">
+					            <span class="block">
+									<i class="blue2" uk-icon="calendar"></i><?php echo $date;?><br>
+									
+								</span>
+								<span class="block">
+									<i class="blue2" uk-icon="clock"></i><?php echo $location['starttime'];?>
+								</span >
+								
+								<span class="block">
+									<i class="blue2" uk-icon="location"></i><?php echo $location['address'];?>
+								</span>
+								<?php if(get_field('body_cost')):?>
+									<span class="block">
+										<i class="blue2 text">$</i><?php echo get_field('body_cost');?>
+									</span>
+								<?php endif;?>
+								<?php if($location['address']):?>
+						            <iframe
+						              width="340"
+						              height="220"
+						              frameborder="0" style="border:0"
+						              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvavqTeZXc48iALmnGfypI6ZuJ1jNW-lE
+						                &q=<?php echo $location['address'];?>" allowfullscreen>
+						            </iframe>
+					            <?php endif;?>
+						    </div>
+					    </li>
+					    <?php endforeach;?>	
+							
+			        </ul>
 		            <div uk-grid class="card-share uk-child-width-1-2 uk-grid-small">
 		            	<div>
             				<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_SERVER['REQUEST_URI'];?>"><span uk-icon="icon: facebook"></span>Facebook</a>
@@ -65,18 +90,17 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
             		<div class="commingup">
             			<p class="title">Coming Up</p>
 
-            			<?php $events = get_three_events();?>
-            			<?php if ($events->have_posts()) :
+            			<?php $programs = get_three_programs(get_the_id());?>
+            			<?php if ($programs->have_posts()) :
 							$count = 1;
 							
-								while ( $events->have_posts() ) {
-									$events->the_post();
+								while ( $programs->have_posts() ) {
+									$programs->the_post();
 									$today = date("Y-m-d");
 
-									$endDate = date_format( date_create(get_field('body_enddate')),"Y-m-d");
-									if ($endDate > $today) {
-										get_template_part( 'template-parts/content/sidebar', 'event' );
-									}
+									
+									get_template_part( 'template-parts/content/sidebar', 'program' );
+								
 								}
 								wp_reset_postdata(); 
 						endif;?>

@@ -131,7 +131,7 @@
 	}
 }
 .breadcrumbs-outer {
-	background: $blue2;
+	background: $blue;
 	padding-top: 12px;
 	padding-bottom: 12px;
 	span {
@@ -627,14 +627,14 @@
 }
 
 .program-item {
-	img {
+	img, iframe {
 		border-radius: 10px;
 	}
 	.page-banner-image img {
 		border-radius: 0px;
 	}
 	.content-left {
-		padding-right: 30px;
+		padding-right: 70px;
 		@media only screen and (max-width: 639px) {
 			padding-right: 0px;
 		}
@@ -644,6 +644,12 @@
 	}
 	.sideinfo {
 		font-weight: 500;
+		.uk-accordion {
+			li + li {
+				border-top: 1px solid $grid-border;
+				padding-top: 20px;
+			}
+		}
 		span.block {
 			display: block;
 			padding: 15px 0;
@@ -672,13 +678,15 @@
 		iframe {
 			margin-top: 3px;
 			border-radius: 10px;
+			min-width: 372px;
+			min-height: 240.706px;
 		}
 		.card-share {
 			display: flex;
 			margin-top: 30px;
 			.share-btn {
 				background: $light-blue-bg;
-				color: $blue;
+				color: $blue2;
 				border-radius: 10px;
 				padding: 10px 30px;
 				display: inline-block;

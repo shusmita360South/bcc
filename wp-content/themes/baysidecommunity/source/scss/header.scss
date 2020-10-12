@@ -64,7 +64,7 @@ header#site-header {
 			}
 			&:hover {
 				.icon {
-					color: $blue;
+					color: $blue2;
 				}
 			}
 		}
@@ -93,15 +93,15 @@ header#site-header {
 	}
 	.current-menu-parent {
 		> a, .icon {
-			color: $blue;
+			color: $blue2;
 		}
 		
 	}
 	.primary-menu ul {
-		background: $blue;
+		background: $blue2;
 		z-index: 2;
 		&:after {	   
-		    border-bottom-color: $blue;
+		    border-bottom-color: $blue2;
 		}
 	}
 	.primary-menu li.current-menu-item > a, .primary-menu li.current-menu-item > .link-icon-wrapper > a {
@@ -162,7 +162,7 @@ header#site-header {
 		.giving {
 			height: 100px;
 			line-height: 100px;
-			background: $blue;
+			background: $blue2;
 			color: $white;
 			font-size: 16px;
 			font-weight: bold;
@@ -202,7 +202,7 @@ header#site-header {
 		&:hover {
 			border: 0px solid #00ADEE;
 			.toggle-text { 
-				color: $blue
+				color: $blue2;
 			}
 		}
 	}
