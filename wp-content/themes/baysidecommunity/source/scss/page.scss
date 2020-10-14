@@ -29,6 +29,7 @@
 			}
 			h1 {
 				max-width: 780px;
+				padding-right: 15px;
 			}
 			
 			
@@ -48,14 +49,14 @@
 		}
 		@media only screen and (max-width: 600px) {
 			left:70px;
-			bottom: 30px;
+			bottom: 75px;
 		}
 		.owl-dot {
 			width: 110px;
 			color: $white;
 			opacity: .5;
 			@media only screen and (max-width: 600px) {
-				width: 70px;
+				width: 55px;
 			}
 			&.active {
 				opacity: 1;
@@ -66,7 +67,7 @@
 				display: inline-block;
 				border-radius: 2px;
 				@media only screen and (max-width: 600px) {
-					width: 60px;
+					width: 45px;
 				}
 				&.color-pink {
 					background: $pink;
@@ -94,8 +95,7 @@
 				max-width: 70px;
 				display: inline-block;
 				@media only screen and (max-width: 600px) {
-					max-width: 60px;
-					font-size: 14px;
+					display: none;
 				}
 			}
 		}
@@ -680,6 +680,9 @@
 			border-radius: 10px;
 			min-width: 372px;
 			min-height: 240.706px;
+			@media only screen and (max-width: 639px) {
+				min-width: 300px;
+			}
 		}
 		.card-share {
 			display: flex;
@@ -692,6 +695,9 @@
 				display: inline-block;
 				width: 100%;
 				text-align: center;
+				@media only screen and (max-width: 639px) {
+					padding: 10px 0px;
+				}
 				span {
 					display: inline-block;
 					position: relative;
@@ -970,6 +976,9 @@
 			font-size: 16px;
 			letter-spacing: 0;
 			line-height: 28px;
+			@media only screen and (max-width: 639px) {
+				width: 200px;
+			}
 		}
 		.uk-button {
 			height: 63px;
@@ -977,6 +986,10 @@
 			border-radius: 0 10px 10px 0;
 			background-color: $green;
 			border: transparent;
+			padding: 0;
+			@media only screen and (max-width: 639px) {
+				width: 70px;
+			}
 			.uk-icon {
 				top: 5px;
 				position: relative;

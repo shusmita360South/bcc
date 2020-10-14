@@ -88,9 +88,22 @@ footer#site-footer {
 		padding-bottom: 30px;
 		display: flex;
 		justify-content: space-between;
+		@media only screen and (max-width: 639px) {
+			flex-direction: column;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		>div {
+			@media only screen and (max-width: 639px) {
+				text-align: center;
+			}
+		}
 	}
 	a,p {
 		font-size: 14px;
 		color: $white;
+		@media only screen and (max-width: 639px) {
+			margin-bottom: 0;
+		}
 	}
 }

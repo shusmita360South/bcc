@@ -119,7 +119,7 @@ $headerBgColor = "#FFFFFF";
 	
 
 	<?php if ( get_field('program_heading') ) : ?>
-		<section class="block-1 section-padding-tb green-bg">
+		<section class="block-1 section-padding-top green-bg">
 			<div class="grid-container-small">
 				<div class="block-1-inner center ">
 					<h2 class="white"><?php the_field('program_heading') ?></h2>
@@ -242,7 +242,7 @@ $headerBgColor = "#FFFFFF";
 					<h2 class="white"><?php the_field('subscribe_heading') ?></h2>
 					<form class="uk-margin-medium-top">
 						
-				        <input class="uk-input" type="text" placeholder="Input"><button class="uk-button uk-button-default"><span class="white" uk-icon="arrow-right"></span></button>
+				        <input class="uk-input" type="text" placeholder="Email"><button class="uk-button uk-button-default"><span class="white" uk-icon="arrow-right"></span></button>
 				    </form>
 				</div>
 			</div>

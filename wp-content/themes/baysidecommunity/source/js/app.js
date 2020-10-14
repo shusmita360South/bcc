@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
     var $heroSlider = $(".hero-slider");
     $heroSlider.owlCarousel({
         items: 1,
-        //autoplay: true,
+        autoplay: true,
         autoplayTimeout: 4000,
         mouseDrag: false,
         touchDrag: false,
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 
     $('.hero-slider .owl-dot').click(function() {
         $heroSlider.trigger('to.owl.carousel', [$(this).index(), 1000]);
-        $('.hero-slider .owl-item.active video').get(0).play();
+        
         $heroSlider.trigger('stop.owl.autoplay');
 
         $heroSlider.trigger('play.owl.autoplay');
@@ -33,9 +33,7 @@ jQuery(document).ready(function($) {
     function onChangedHero(program) {
        var current = program.currentTarget;
 
-       setTimeout(function(){
-       $('.hero-slider .owl-item.active video').get(0).play();
-       },1);
+      
     }
 
 

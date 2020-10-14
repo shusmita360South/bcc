@@ -226,6 +226,9 @@ header#site-header {
     	}	
     }
 .menu-modal {
+	&.active {
+		z-index: 999;
+	}
 	button {
 		&:hover {
 			border: 0px solid #00ADEE;
