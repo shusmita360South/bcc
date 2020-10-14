@@ -204,6 +204,10 @@ function baysidecommunity_register_scripts() {
 	wp_enqueue_script( 'baysidecommunity-vendor-js', get_template_directory_uri() . '/assets/js/vendor.js', array(), $theme_version, false );
 	wp_enqueue_script( 'baysidecommunity-app-js', get_template_directory_uri() . '/assets/js/app.js', array(), $theme_version, false );
 
+	if (is_page_template( 'page-contact.php' ) || is_page_template( 'page-registration.php') ) {
+		wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js', array(), '1.0', true );
+	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'baysidecommunity_register_scripts' );
