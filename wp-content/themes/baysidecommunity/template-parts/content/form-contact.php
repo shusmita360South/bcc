@@ -3,12 +3,10 @@
 		<div class="form-outer">
 			<form name="contactform" id="contactform" class="validate-form" action="" method="POST">
 				<?php if( isset( $submission['success'] ) ) : ?>
-					<script type="text/javascript">
-      					document.location.href="https://www.comfortsleepbedding.com.au/thank-you/";
-					</script>
+					
 					<div class="success-msg">
 						<h3 class="center">Thank you for your enquiry!</h3>
-						<p class="big center">The team at Comfort Sleep will endeavour to contact you as soon as possible.</p>
+						<p class="big center">The team at Bayside Community care will endeavour to contact you as soon as possible.</p>
 						<div class="center uk-margin-large-top">
 							<a class="button" href="/">Back Home</a>
 						</div>
