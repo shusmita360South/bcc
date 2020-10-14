@@ -470,24 +470,16 @@ function contact_submission($subject)
 	{
 		$post = array(
 			'type'  		=> sanitize_text_field( $_POST['type'] ),
-			'aboutus'  		=> sanitize_text_field( $_POST['aboutus'] ),
 			'message'  		=> sanitize_text_field( $_POST['message'] ),
 			'fname'  		=> sanitize_text_field( $_POST['fname'] ),
-			'lname'  		=> sanitize_text_field( $_POST['lname'] ),
 			'cemail'    	=> sanitize_email( $_POST['cemail'] ),
-			'phone'  		=> sanitize_text_field( $_POST['phone'] ),
-			'postcode'  		=> sanitize_text_field( $_POST['postcode'] ),
 			'recaptcha' 	=> $_POST['g-recaptcha-response']
 		);
 
 		$_SESSION['type'] 			= $post['type'];
-		$_SESSION['aboutus'] 		= $post['aboutus'];
 		$_SESSION['message'] 		= $post['message'];
 		$_SESSION['fname'] 			= $post['fname'];
-		$_SESSION['lname'] 			= $post['lname'];
 		$_SESSION['cemail'] 		= $post['cemail'];
-		$_SESSION['phone']   		= $post['phone'];
-		$_SESSION['postcode']   	= $post['postcode'];
 
 		$submission = array();
 
@@ -522,13 +514,9 @@ function contact_submission($subject)
 			if ( $sent )
 			{
 				unset( $_SESSION['type'] );
-				unset( $_SESSION['aboutus'] );
 				unset( $_SESSION['message'] );
 				unset( $_SESSION['fname'] );
-				unset( $_SESSION['lname'] );
 				unset( $_SESSION['cemail'] );
-				unset( $_SESSION['phone'] );
-				unset( $_SESSION['postcode'] );
 				$submission['success'] = 1;
 			} else {
 				$submission['error']   = 'An error was encountered while submitting your enquiry. Please try again later.';
@@ -558,34 +546,15 @@ function contact_submission_email( $post, $subject)
 					<td align="left" valign="top">' . $post['fname'] . '</td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
-				<tr>
-					<td width="300" align="left" valign="top"><strong>First Name:</strong></td>
-					<td align="left" valign="top">' . $post['lname'] . '</td>
-				</tr>
-				<tr><td>&nbsp;</td><td></td></tr>
+				
 				<tr>
 					<td width="300" align="left" valign="top"><strong>Email address:</strong></td>
 					<td align="left" valign="top">' . $post['cemail'] . '</td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 				<tr>
-					<td width="300" align="left" valign="top"><strong>Phone:</strong></td>
-					<td align="left" valign="top">' . $post['phone'] . '</td>
-				</tr>
-				<tr><td>&nbsp;</td><td></td></tr>
-				<tr>
-					<td width="300" align="left" valign="top"><strong>Postcode:</strong></td>
-					<td align="left" valign="top">' . $post['postcode'] . '</td>
-				</tr>
-				<tr><td>&nbsp;</td><td></td></tr>
-				<tr>
 					<td width="300" align="left" valign="top"><strong>Enquiry Type:</strong></td>
 					<td align="left" valign="top">' . $post['type'] . '</td>
-				</tr>
-				<tr><td>&nbsp;</td><td></td></tr>
-				<tr>
-					<td width="300" align="left" valign="top"><strong>How did you hear about us:</strong></td>
-					<td align="left" valign="top">' . $post['aboutus'] . '</td>
 				</tr>
 				<tr><td>&nbsp;</td><td></td></tr>
 				<tr>
