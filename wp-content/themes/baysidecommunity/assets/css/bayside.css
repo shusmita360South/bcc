@@ -4,7 +4,7 @@
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, .bottom-note, button, .button, a {
+.transition300ms, .subscribe-bg form .uk-button .uk-icon, .bottom-note, .top-note, button, .button, a {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -232,6 +232,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
+  font-family: "Gilroy";
   font-size: 35px;
   line-height: 50px;
   margin-bottom: 15px;
@@ -315,7 +316,7 @@ li {
   letter-spacing: 0.5px;
 }
 
-h2, .uk-h2, h3, .uk-h3, h4, .uk-h4, h5, .uk-h5, h6, .uk-h6, .uk-heading-small, .uk-heading-medium, .uk-heading-large, .uk-heading-xlarge, .uk-heading-2xlarge {
+h3, .uk-h3, h4, .uk-h4, h5, .uk-h5, h6, .uk-h6, .uk-heading-small, .uk-heading-medium, .uk-heading-large, .uk-heading-xlarge, .uk-heading-2xlarge {
   font-family: "HelveticaNowDisplay";
 }
 
@@ -1269,7 +1270,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, .bottom-note, a, button, .button {
+.transition300ms, .subscribe-bg form .uk-button .uk-icon, .bottom-note, .top-note, a, button, .button {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -1296,9 +1297,20 @@ header#site-header .toggle-inner .toggle-text {
   text-align: center;
   font-size: 14px;
   padding: 13px 15px;
+  height: auto;
+}
+.top-note.hide {
+  height: 0;
+  padding: 0;
 }
 .top-note a {
   text-decoration: underline;
+}
+.top-note .uk-close {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  top: 17px;
 }
 
 .hero-slider {
@@ -1407,6 +1419,7 @@ header#site-header .toggle-inner .toggle-text {
 .hero-slider .owl-dots .owl-dot span.text {
   max-width: 70px;
   display: inline-block;
+  font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
   .hero-slider .owl-dots .owl-dot span.text {
@@ -2382,7 +2395,11 @@ header#site-header .toggle-inner .toggle-text {
 }
 .subscribe-bg form .uk-button .uk-icon {
   top: 5px;
+  left: 0px;
   position: relative;
+}
+.subscribe-bg form .uk-button:hover .uk-icon {
+  left: 10px;
 }
 
 @media only screen and (max-width: 639px) {
@@ -2494,7 +2511,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, a, button, .button, .bottom-note {
+.transition300ms, a, button, .button, .top-note, .bottom-note, .subscribe-bg form .uk-button .uk-icon {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
