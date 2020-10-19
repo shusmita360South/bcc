@@ -1460,6 +1460,9 @@ header#site-header .toggle-inner .toggle-text {
       -ms-flex-align: center;
           align-items: center;
 }
+.hero-slider .owl-nav button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
 .hero-slider .owl-nav svg {
   width: 9px;
 }
@@ -1973,6 +1976,9 @@ header#site-header .toggle-inner .toggle-text {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.connect-program-carousel .owl-nav button:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .connect-program-carousel .owl-nav button.disabled {
   opacity: 0.5;
