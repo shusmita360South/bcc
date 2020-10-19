@@ -584,6 +584,15 @@ function contact_submission_email( $post, $subject)
 	return wp_mail( $contactEmail ? $contactEmail : get_bloginfo( 'admin_email' ), $subject, $message, $headers );
 }
 
+function custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 /** Butterbean include folder */
 define('BUTTERBEAN', get_template_directory_uri() . '/inc/butterbean/');
 
