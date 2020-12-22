@@ -56,7 +56,16 @@ $twoCols = get_field('body_content');
 									$short_description = str_replace( ']]>', ']]&gt;', $short_description );
 									echo $short_description; 
 								?>
-								<a class="button btn-<?php echo $twoCol['slide_color'] ?> uk-margin-medium-top" href="<?php echo get_the_permalink($twoCol['button_link']); ?>"><?php echo nl2br($twoCol['button_text']) ?></a>
+								<?php if($twoCol['button_text']):?>
+									<?php if($twoCol['button_external_link']):?>
+
+										<a class="video-btn button btn-blue uk-margin-medium-top" href="<?php echo $twoCol['button_external_link']?>"><?php echo nl2br($twoCol['button_text']) ?></a>
+
+									<?php else:?>
+										<a class="button btn-blue uk-margin-medium-top" href="<?php echo get_the_permalink($twoCol['button_link']); ?>"><?php echo nl2br($twoCol['button_text']) ?></a>
+									<?php endif;?>
+
+								<?php endif;?>
 							</div>
 						</div>
 					</div>

@@ -9,7 +9,11 @@ $posttags = get_the_tags();
 	<div class="program-card blog-card">
 		<a href="<?php the_permalink() ?>">
 			<div class="image">
-				<?php the_post_thumbnail( '460x260' ); ?>	
+				<?php  if ( has_post_thumbnail() ):?>
+					<?php the_post_thumbnail( '460x260' ); ?>	
+				<?php else:?>
+					<img src="/img/deafult-blog-list.png"/>
+				<?php endif;?>
 			</div>
 			<div class="content">
 				<h4><?php the_title(); ?></h4>

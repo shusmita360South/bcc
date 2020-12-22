@@ -641,12 +641,12 @@ require CLASSES_FOLDER . 'class-page.php';
 /**
  * Connect class.
  */
-require CLASSES_FOLDER . 'class-gallery.php';
+//require CLASSES_FOLDER . 'class-gallery.php';
 
 /**
  * Connect class.
  */
-require CLASSES_FOLDER . 'class-faq.php';
+//require CLASSES_FOLDER . 'class-faq.php';
 
 /**
  * blog class.

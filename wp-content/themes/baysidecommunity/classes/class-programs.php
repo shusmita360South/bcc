@@ -469,7 +469,7 @@ function get_program( $programGroupId ) {
 	$array = array(
 		'post_type'      => 'programs',
 		'posts_per_page' =>  -1,
-		'orderby'        => 'menu_order',
+		'orderby'        => 'date',
 		'order'          => 'ASC',
 		'tax_query' => array(
 	        array(

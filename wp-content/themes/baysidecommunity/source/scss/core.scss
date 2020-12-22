@@ -271,6 +271,12 @@ button, .button {
 			padding: 18px 20px;
 		}
 	@extend .transition300ms;
+	&.mfp-close, &.uk-close {
+		&:hover {
+    		background: transparent;
+    		border: transparent;
+    	}
+	}
 	&:hover {
 			border: 1px solid $blue;
 			background: $white;

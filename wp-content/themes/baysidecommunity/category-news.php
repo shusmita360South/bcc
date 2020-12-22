@@ -44,7 +44,7 @@ $tags = get_tags();
 		</figure>	
 	</div>
 	<div class="page-banner-content">		
-		<h1 class="">Blog</h1>
+		<h1 class="">News</h1>
 	</div>
 </section>
 

@@ -342,6 +342,10 @@ button, .button {
     padding: 18px 20px;
   }
 }
+button.mfp-close:hover, button.uk-close:hover, .button.mfp-close:hover, .button.uk-close:hover {
+  background: transparent;
+  border: transparent;
+}
 button:hover, .button:hover {
   border: 1px solid #0072BC;
   background: #FFF;
@@ -1352,7 +1356,7 @@ header#site-header .toggle-inner .toggle-text {
 }
 .hero-slider .owl-dots {
   position: absolute;
-  bottom: 90px;
+  bottom: 50px;
   left: -webkit-calc((((100% - 1440px)/2)) + 93px);
   left: calc((((100% - 1440px)/2)) + 93px);
   display: -webkit-box;
