@@ -133,9 +133,17 @@ jQuery(document).ready(function($) {
     var submenuParentLink = $( '#menu-mainmenu > li a');
     $(submenuParentLink).on('click', function (e) {
         if ($(this).next('.sub-menu').length && $(this).attr("rel") != "testcomm") {
-            e.prprogramDefault();
+            e.preventDefault();
         }
     });
+    $('.sub-menu').on('mouseover', function (e) {
+        $(this).parent().addClass('hoverparent');
+        $('.sub-menu').on('mouseout', function (e) {
+            $(this).parent().removeClass('hoverparent');
+        });
+    });
+    $('.current-menu-item').parent().parent().addClass('current-menu-parent');
+
 
     //=============================================================
     //================program Filter==============================
@@ -161,6 +169,91 @@ jQuery(document).ready(function($) {
         }
 
     });
+    //=============================================================
+    //================blog Filter==============================
+    //=============================================================
+
+    var filterBlogTagUrl = '';
+    var filterBlogTopicUrl = '';
+    var filterBlogKeywordUrl = '';
+
+    $('.blog-filter .filter-select-tag').on('change', function(f) {
+        
+        filterTag = $(this).val();
+
+        if(filterTag != ""){
+          if(filterBlogTopicUrl || filterBlogKeywordUrl){
+            filterBlogTagUrl = '&btag='+filterTag;
+          } else {
+            filterBlogTagUrl = '?btag='+filterTag;
+          }      
+        } else {
+            filterBlogTagUrl = "";
+        }
+        var mainBlogContent = $('#blogList');
+        
+        if(filterTag == ""){
+            var value = "/category/news/"+filterBlogTopicUrl+filterBlogKeywordUrl;
+        } else {
+            var value = "/category/news/"+filterBlogTopicUrl+filterBlogKeywordUrl+filterBlogTagUrl;
+        }
+        mainBlogContent.load(value + " #blogList > *", function(){
+          mainBlogContent.animate({opacity: "1"});
+        }); 
+       
+    });
+    
+    $('.blog-filter .filter-select-keyword').on('click', function(f) {
+        
+        var filterKeyword = $('.filter-select-keyword-input').val();
+        filterKeyword = filterKeyword.split(' ').join('+');
+
+        if(filterKeyword != ""){
+          if(filterBlogTopicUrl || filterBlogTagUrl){
+            filterBlogKeywordUrl = '&keyword='+filterKeyword;
+          } else {
+            filterBlogKeywordUrl = '?keyword='+filterKeyword;
+          }      
+        } else {
+            filterBlogKeywordUrl = "";
+        }
+        var mainBlogContent = $('#blogList');
+        
+        if(filterKeyword == ""){
+           var value = "/category/news/"+filterBlogTopicUrl+filterBlogTagUrl;
+        } else {
+            var value = "/category/news/"+filterBlogKeywordUrl+filterBlogTopicUrl+filterBlogTagUrl;
+        }
+       
+        mainBlogContent.load(value + " #blogList > *", function(){
+          mainBlogContent.animate({opacity: "1"});
+        }); 
+
+
+    });
+    
+    
+    /*$('.blog-filter .filter-select').on('change', function() {
+        window.location =$(this).val();
+        
+        
+    });*/
+
+    var url = new URL(document.location);
+    // Get query parameters object
+    var params = url.searchParams;
+    // Get value of type
+    var btag_param = params.get("btag");
+    if (btag_param != null) {
+        $(".blog-filter .filter-select-tag").val(btag_param);
+    } 
+    var keyword_param = params.get("keyword");
+    if (keyword_param != null) {
+        $(".blog-filter .filter-select-keyword-input").val(keyword_param);
+    } 
+    
+
+   
     
 
    

@@ -240,9 +240,24 @@ $headerBgColor = "#FFFFFF";
 			<div class="grid-container-small">
 				<div class="block-1-inner">
 					<h2 class="white"><?php the_field('subscribe_heading') ?></h2>
-					<form class="uk-margin-medium-top">
+					<!--<form class="uk-margin-medium-top">
 						
 				        <input class="uk-input" type="text" placeholder="Email"><button class="uk-button uk-button-default"><span class="white" uk-icon="arrow-right"></span></button>
+				    </form>-->
+				    <form action="//baysidechurch.us7.list-manage.com/subscribe/post?u=61c4df35245596836679fc55e&amp;id=5bbbe1b0e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate uk-margin-medium-top" target="_blank" novalidate="novalidate">
+				
+				        <input name="FNAME" id="mce-FNAME" class="uk-input" type="text" placeholder="Name">
+
+				        <input type="email" value="" name="EMAIL" class="required email uk-input" id="mce-EMAIL" aria-required="true" placeholder="Email"/>
+
+				        <div id="mce-responses" class="clear">
+							<div class="response red" id="mce-error-response" style="display:none"></div>
+							<div class="response white" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_61c4df35245596836679fc55e_5bbbe1b0e5" tabindex="-1" value=""></div>
+					    <div class="clear uk-margin-medium-top"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn-blue"></div>
+
+
 				    </form>
 				</div>
 			</div>
