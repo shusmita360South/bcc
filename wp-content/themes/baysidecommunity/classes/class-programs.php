@@ -255,6 +255,9 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 				'body_logo'
 			);
 			$body->register_setting(
+				'body_email'
+			);
+			$body->register_setting(
 				'body_video'
 			);
 			$body->register_setting(
@@ -321,7 +324,15 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 		        )
 			);
 			
-		
+			$body->register_control(
+		        'body_email',
+		        array(
+		        	'type'    => 'text',
+		        	'section' => 'intro',
+		        	'label'   => esc_html__( 'Contact Email' ),
+		        	'attr'    => array( 'class' => 'widefat' ),
+		        )
+			);
 
 			$body->register_control(
 		        'body_externalbtnlink',
