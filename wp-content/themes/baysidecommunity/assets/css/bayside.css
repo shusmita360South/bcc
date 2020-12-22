@@ -4,7 +4,7 @@
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, .bottom-note, .top-note, button, .button, a {
+.transition300ms, .bottom-note, .top-note, button, .button, form#commentform input#submit, a {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -320,7 +320,7 @@ h3, .uk-h3, h4, .uk-h4, h5, .uk-h5, h6, .uk-h6, .uk-heading-small, .uk-heading-m
   font-family: "HelveticaNowDisplay";
 }
 
-button, .button {
+button, .button, form#commentform input#submit {
   background: #0072BC;
   color: #FFF;
   font-size: 16px;
@@ -338,105 +338,105 @@ button, .button {
   border-radius: 10px;
 }
 @media only screen and (max-width: 639px) {
-  button, .button {
+  button, .button, form#commentform input#submit {
     padding: 18px 20px;
   }
 }
-button.mfp-close:hover, button.uk-close:hover, .button.mfp-close:hover, .button.uk-close:hover {
+button.mfp-close:hover, button.uk-close:hover, .button.mfp-close:hover, form#commentform input.mfp-close#submit:hover, .button.uk-close:hover, form#commentform input.uk-close#submit:hover {
   background: transparent;
   border: transparent;
 }
-button:hover, .button:hover {
+button:hover, .button:hover, form#commentform input#submit:hover {
   border: 1px solid #0072BC;
   background: #FFF;
   color: #0072BC;
 }
-button.more-info, .button.more-info {
+button.more-info, .button.more-info, form#commentform input.more-info#submit {
   background: transparent;
   color: #0072BC;
   border: 0px;
   padding: 0;
 }
-button.more-info:hover, .button.more-info:hover {
+button.more-info:hover, .button.more-info:hover, form#commentform input.more-info#submit:hover {
   background: transparent;
   color: #FAA421;
 }
-button.btn-white, .button.btn-white {
+button.btn-white, .button.btn-white, form#commentform input.btn-white#submit {
   background: #FFF;
   color: #505050;
   border: 1px solid #FFF;
 }
-button.btn-white:hover, .button.btn-white:hover {
+button.btn-white:hover, .button.btn-white:hover, form#commentform input.btn-white#submit:hover {
   border: 1px solid #FFF;
   background: transparent;
   color: #FFF;
 }
-button.btn-pink, .button.btn-pink {
+button.btn-pink, .button.btn-pink, form#commentform input.btn-pink#submit {
   background: #EC008C;
   color: #FFF;
   border: 1px solid #EC008C;
 }
-button.btn-pink:hover, .button.btn-pink:hover {
+button.btn-pink:hover, .button.btn-pink:hover, form#commentform input.btn-pink#submit:hover {
   border: 1px solid #EC008C;
   background: #FFF;
   color: #EC008C;
 }
-button.btn-red, .button.btn-red {
+button.btn-red, .button.btn-red, form#commentform input.btn-red#submit {
   background: #ED1C24;
   color: #FFF;
   border: 1px solid #ED1C24;
 }
-button.btn-red:hover, .button.btn-red:hover {
+button.btn-red:hover, .button.btn-red:hover, form#commentform input.btn-red#submit:hover {
   border: 1px solid #ED1C24;
   background: #FFF;
   color: #ED1C24;
 }
-button.btn-green, .button.btn-green {
+button.btn-green, .button.btn-green, form#commentform input.btn-green#submit {
   background: #00A550;
   color: #FFF;
   border: 1px solid #00A550;
 }
-button.btn-green:hover, .button.btn-green:hover {
+button.btn-green:hover, .button.btn-green:hover, form#commentform input.btn-green#submit:hover {
   border: 1px solid #00A550;
   background: #FFF;
   color: #00A550;
 }
-button.btn-green2, .button.btn-green2 {
+button.btn-green2, .button.btn-green2, form#commentform input.btn-green2#submit {
   background: #71BE44;
   color: #FFF;
   border: 1px solid #71BE44;
 }
-button.btn-green2:hover, .button.btn-green2:hover {
+button.btn-green2:hover, .button.btn-green2:hover, form#commentform input.btn-green2#submit:hover {
   border: 1px solid #71BE44;
   background: #FFF;
   color: #71BE44;
 }
-button.btn-orange, .button.btn-orange {
+button.btn-orange, .button.btn-orange, form#commentform input.btn-orange#submit {
   background: #F79252;
   color: #FFF;
   border: 1px solid #F79252;
 }
-button.btn-orange:hover, .button.btn-orange:hover {
+button.btn-orange:hover, .button.btn-orange:hover, form#commentform input.btn-orange#submit:hover {
   border: 1px solid #F79252;
   background: #FFF;
   color: #F79252;
 }
-button.btn-blue, .button.btn-blue {
+button.btn-blue, .button.btn-blue, form#commentform input.btn-blue#submit {
   background: #0072BC;
   color: #FFF;
   border: 1px solid #0072BC;
 }
-button.btn-blue:hover, .button.btn-blue:hover {
+button.btn-blue:hover, .button.btn-blue:hover, form#commentform input.btn-blue#submit:hover {
   border: 1px solid #0072BC;
   background: #FFF;
   color: #0072BC;
 }
-button.btn-blue2, .button.btn-blue2 {
+button.btn-blue2, .button.btn-blue2, form#commentform input.btn-blue2#submit {
   background: #00ADEE;
   color: #FFF;
   border: 1px solid #00ADEE;
 }
-button.btn-blue2:hover, .button.btn-blue2:hover {
+button.btn-blue2:hover, .button.btn-blue2:hover, form#commentform input.btn-blue2#submit:hover {
   border: 1px solid #00ADEE;
   background: #FFF;
   color: #00ADEE;
@@ -1274,7 +1274,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, .bottom-note, .top-note, a, button, .button {
+.transition300ms, .bottom-note, .top-note, a, button, .button, form#commentform input#submit {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -1678,15 +1678,50 @@ header#site-header .toggle-inner .toggle-text {
 .block-1 .block-1-inner {
   z-index: 2;
   position: relative;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .block-1 .block-1-inner p, .block-1 .block-1-inner h2, .block-1 .block-1-inner h3, .block-1 .block-1-inner h4 {
-  max-width: 700px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 }
+.block-1 .block-1-inner ul {
+  padding-left: 15px;
+}
 .block-1 .block-1-inner p:last-child {
   margin-bottom: 0;
+}
+.block-1 .block-1-inner em {
+  color: #505050;
+}
+.block-1 .block-1-inner a:not(.button) {
+  color: #0072BC;
+}
+.block-1 .block-1-inner a:not(.button):hover {
+  color: #FAA421;
+}
+.block-1 .block-1-inner.justify-left p, .block-1 .block-1-inner.justify-left h2, .block-1 .block-1-inner.justify-left h3, .block-1 .block-1-inner.justify-left h4 {
+  text-align: left;
+}
+.block-1 .block-1-inner.justify-left .social-icon, .block-1 .block-1-inner.justify-left .item-leader {
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+.block-1 .block-1-inner.justify-left .item-leader .image, .block-1 .block-1-inner.justify-left .item-leader .content {
+  margin-left: 0;
+}
+.block-1 .block-1-inner.justify-left .blogdate {
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.block-1 .block-1-inner a.uk-accordion-title {
+  color: #505050;
 }
 .block-1 .about_block {
   position: relative;
@@ -1883,7 +1918,7 @@ header#site-header .toggle-inner .toggle-text {
   opacity: 0.8;
   color: #FFF;
 }
-.program-card .content .button {
+.program-card .content .button, .program-card .content form#commentform input#submit, form#commentform .program-card .content input#submit {
   height: auto;
 }
 .program-card .content .subtitle {
@@ -2450,8 +2485,67 @@ header#site-header .toggle-inner .toggle-text {
   letter-spacing: 0.5px;
   font-weight: normal;
 }
-.form-outer form .button {
+.form-outer form .button, .form-outer form#commentform input#submit {
   border: none;
+}
+
+.comment-meta {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+}
+.comment-meta .comment-metadata {
+  margin-left: 4px;
+}
+
+.comment-author img {
+  display: none;
+}
+
+.comment.byuser + .comment.byuser {
+  border-top: 1px solid #E6E6E6;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.comment-reply-link {
+  font-weight: bold;
+}
+
+form#commentform label {
+  color: #505050;
+  font-weight: bold;
+  font-family: "HelveticaNowDisplay";
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+form#commentform label span.astrick {
+  color: #ED1C24;
+}
+form#commentform textarea {
+  width: 100%;
+  border-radius: 10px;
+  background: #F3F3F3;
+  border: 0px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+form#commentform input:not([type=checkbox]) {
+  width: 100%;
+  height: 50px;
+  font-family: "HelveticaNowDisplay";
+  font-size: 16px;
+  border-radius: 10px;
+  background: #F3F3F3;
+  border: 0px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+form#commentform input#submit {
+  width: auto;
 }
 
 /*.subscribe-bg {
@@ -2540,7 +2634,7 @@ header#site-header .toggle-inner .toggle-text {
     width: 200px;
   }
 }
-.subscribe-bg form .button {
+.subscribe-bg form .button, .subscribe-bg form#commentform input#submit {
   border: 0;
 }
 
@@ -2583,6 +2677,15 @@ header#site-header .toggle-inner .toggle-text {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .item-leader .content {
   display: -webkit-box;
@@ -2593,17 +2696,17 @@ header#site-header .toggle-inner .toggle-text {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   margin-left: 20px;
+  margin-right: 10px;
 }
 .item-leader .image {
   width: 120px;
   height: 120px;
   border: 1px solid #E6E6E6;
   border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
 @media only screen and (max-width: 600px) {
   .item-leader .image {
@@ -2617,7 +2720,6 @@ header#site-header .toggle-inner .toggle-text {
 .item-leader p {
   font-weight: 500;
   margin-bottom: 0;
-  text-align: left !important;
 }
 .item-leader .title {
   font-size: 18px;
@@ -2726,7 +2828,7 @@ header#site-header .toggle-inner .toggle-text {
   -o-transition: all 0s ease-in-out;
 }
 
-.transition300ms, a, button, .button, .top-note, .bottom-note {
+.transition300ms, a, button, .button, .top-note, .bottom-note, form#commentform input#submit {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
