@@ -139,6 +139,10 @@ if ( ! class_exists( 'ButterBean_Page' ) ) {
 			);
 
 			$body->register_setting(
+				'ctabottom_image'
+			);
+
+			$body->register_setting(
 				'ctabottom_short_description'
 			);
 
@@ -184,6 +188,16 @@ if ( ! class_exists( 'ButterBean_Page' ) ) {
 		        	'type'    => 'text',
 		        	'section' => 'ctabottom_section',
 		        	'label'   => esc_html__( 'Heading' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
+
+			$body->register_control(
+		        'ctabottom_image',
+		        array(
+		        	'type'    => 'image',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'image' ),
 		        	'attr'    => array( 'class' => 'widefat' )
 		        )
 			);

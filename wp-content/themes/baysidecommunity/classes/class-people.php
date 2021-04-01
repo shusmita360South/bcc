@@ -224,7 +224,9 @@ if ( ! class_exists( 'ButterBean_People' ) ) {
 			$body->register_setting(
 				'body_bio'
 			);
-			
+			$body->register_setting(
+				'body_biolong'
+			);
 
 			
 		}
@@ -298,6 +300,17 @@ if ( ! class_exists( 'ButterBean_People' ) ) {
 
 		        )
 			);
+			$body->register_control(
+		        'body_biolong',
+		        array(
+		        	'type'    => 'textarea',
+		        	'section' => 'intro',
+		        	'label'   => esc_html__( 'Bio Long' ),
+		        	'attr'    => array( 'class' => 'widefat' ),
+
+		        )
+			);
+			
 			
 			
 			
@@ -345,8 +358,8 @@ function get_people() {
 	$array = array(
 		'post_type'      => 'people',
 		'posts_per_page' =>  -1,
-		'orderby'        => 'menu_order',
-		'order'          => 'ASC',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
 
 	);
 

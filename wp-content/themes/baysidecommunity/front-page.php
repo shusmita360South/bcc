@@ -6,7 +6,7 @@ $headerBgColor = "#FFFFFF";
 
 ?>
 <div class="container">
-	<section class="top-note"><?php the_field('note_text1') ?></section>
+	<section class="top-note"><?php the_field('note_text1') ?><span uk-close></span></section>
 	<section class="hero">
 		<?php if ($sliders = get_field('hero_slider', get_the_ID())) : ?>
 			<div class="hero-slider owl-carousel">
@@ -47,7 +47,7 @@ $headerBgColor = "#FFFFFF";
 		<section class="block-1 center section-padding-tb">
 			<div class="grid-container-small">
 				<div class="block-1-inner">
-					<h2 class="blue"><?php the_field('about_heading') ?></h2>
+					<h2><?php the_field('about_heading') ?></h2>
 					<p class="short-desc"><?php echo nl2br(get_field('about_short_description')) ?></p>
 					<?php if( get_field('about_button_link') ) : ?>
 						<a class="button-arrow-dark" href="<?php echo get_page_link(get_field('about_button_link')) ?>"><?php the_field('about_button_text'); ?></a>	
@@ -63,9 +63,28 @@ $headerBgColor = "#FFFFFF";
 									$ukWidth = "uk-width-1-1 uk-width-1-2@s";
 								} else {
 									$ukWidth = "uk-width-1-1 uk-width-1-3@s";
-								}
+								};
+
+
+
 								$about_block_post = new WP_Query('page_id='.$about_block_id);
+								
 								while ($about_block_post->have_posts()) : $about_block_post->the_post();
+
+									//	CHECK IF THIS ABOUT BLOCK IS A POST CATEGORY
+									if (strpos($about_block_id, 'cat') !== false) {
+										$cat_id = substr($about_block_id, strpos($about_block_id, "=") + 1); 
+
+										$about_block_title = get_cat_name($cat_id);
+										$about_block_thumbnail_image = '<img src="' . z_taxonomy_image_url($cat_id, '460x300') . '" alt="' . $about_block_title . '" />';
+										$page_link_url = get_site_url() . '/?' . $about_block_id;
+
+									} else {
+										$cat_id = -1;
+										$page_link_url = get_page_link();
+									};
+
+									
 							?>
 								
 								
@@ -73,11 +92,25 @@ $headerBgColor = "#FFFFFF";
 								<?php //$image_header = wp_get_attachment_image_src($about_block['image_id'], '460x300');?>
 								<div class="<?php echo $ukWidth;?> uk-margin-medium-top">
 									<div class="about_block">
-										<a href="<?php echo get_page_link()?>">
-								           <?php the_post_thumbnail( '460x300' ); ?>	
+										<a href="<?php echo $page_link_url ?>">
+								           	<?php 
+												if ($cat_id == -1) {
+													the_post_thumbnail( '460x300' );
+												} else {
+													echo $about_block_thumbnail_image;
+												};
+										   	?>	
 								           
 								            <div class="slide-content">
-												<h4><?php the_title(); ?></h4>
+												<h4>
+												<?php 
+													if ($cat_id == -1) {
+														the_title();
+													} else {
+														echo $about_block_title;
+													};
+												?>
+												</h4>
 												
 											</div>
 										</a>
@@ -119,7 +152,7 @@ $headerBgColor = "#FFFFFF";
 	
 
 	<?php if ( get_field('program_heading') ) : ?>
-		<section class="block-1 section-padding-tb green-bg">
+		<section class="block-1 section-padding-top green-bg">
 			<div class="grid-container-small">
 				<div class="block-1-inner center ">
 					<h2 class="white"><?php the_field('program_heading') ?></h2>
@@ -152,7 +185,7 @@ $headerBgColor = "#FFFFFF";
 		<section class="block-1 center section-padding-tb">
 			<div class="grid-container-small">
 				<div class="block-1-inner">
-					<h2 class="blue"><?php the_field('getinvolve_heading') ?></h2>
+					<h2><?php the_field('getinvolve_heading') ?></h2>
 					<p class="short-desc"><?php echo nl2br(get_field('getinvolve_short_description')) ?></p>
 					<?php if( get_field('getinvolve_button_link') ) : ?>
 						<a class="button-arrow-dark" href="<?php echo get_page_link(get_field('getinvolve_button_link')) ?>"><?php the_field('getinvolve_button_text'); ?></a>	
@@ -240,9 +273,24 @@ $headerBgColor = "#FFFFFF";
 			<div class="grid-container-small">
 				<div class="block-1-inner">
 					<h2 class="white"><?php the_field('subscribe_heading') ?></h2>
-					<form class="uk-margin-medium-top">
+					<!--<form class="uk-margin-medium-top">
 						
-				        <input class="uk-input" type="text" placeholder="Input"><button class="uk-button uk-button-default"><span class="white" uk-icon="arrow-right"></span></button>
+				        <input class="uk-input" type="text" placeholder="Email"><button class="uk-button uk-button-default"><span class="white" uk-icon="arrow-right"></span></button>
+				    </form>-->
+				    <form action="//baysidechurch.us7.list-manage.com/subscribe/post?u=61c4df35245596836679fc55e&amp;id=5bbbe1b0e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate uk-margin-medium-top" target="_blank" novalidate="novalidate">
+				
+				        <input name="FNAME" id="mce-FNAME" class="uk-input" type="text" placeholder="Name">
+
+				        <input type="email" value="" name="EMAIL" class="required email uk-input" id="mce-EMAIL" aria-required="true" placeholder="Email"/>
+
+				        <div id="mce-responses" class="clear">
+							<div class="response red" id="mce-error-response" style="display:none"></div>
+							<div class="response white" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_61c4df35245596836679fc55e_5bbbe1b0e5" tabindex="-1" value=""></div>
+					    <div class="clear uk-margin-medium-top"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn-blue"></div>
+
+
 				    </form>
 				</div>
 			</div>

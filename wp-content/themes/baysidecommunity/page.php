@@ -32,7 +32,17 @@ get_header();
 	<?php endif;?>
 
 	<?php if ( get_field('ctabottom_heading') ) : ?>
-		<section class="block-1 center section-padding-tb ctabottom-bg">
+		<?php 
+			$image_header = wp_get_attachment_image_src(get_field('ctabottom_image'), '1920x420');
+			if ($image_header) {
+				$ctabottomBg = $image_header[0];
+
+			} else {
+				$ctabottomBg = "../img/exploringfaith.jpg";
+			}
+
+		?>
+		<section class="block-1 center section-padding-tb ctabottom-bg" style="background-image: url(<?php echo $ctabottomBg?>);">
 			<div class="grid-container-small">
 				<div class="block-1-inner">
 					<h2 class="white"><?php the_field('ctabottom_heading') ?></h2>

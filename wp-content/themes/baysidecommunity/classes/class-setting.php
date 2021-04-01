@@ -188,6 +188,7 @@ class Add_Settings_Field {
 			array('name'=>'event_header_image')
 		);
 
+
 	
 		
 		register_setting( 'general', 'contact_email', 'esc_attr' );
@@ -200,6 +201,7 @@ class Add_Settings_Field {
 		register_setting( 'general', 'contact_phonemedia', 'esc_attr' );
 		register_setting( 'general', 'next_church_onine', 'esc_attr' );
 		register_setting( 'general', 'event_header_image', 'esc_attr' );
+
 		
 	}
 

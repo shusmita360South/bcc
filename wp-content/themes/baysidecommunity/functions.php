@@ -204,6 +204,10 @@ function baysidecommunity_register_scripts() {
 	wp_enqueue_script( 'baysidecommunity-vendor-js', get_template_directory_uri() . '/assets/js/vendor.js', array(), $theme_version, false );
 	wp_enqueue_script( 'baysidecommunity-app-js', get_template_directory_uri() . '/assets/js/app.js', array(), $theme_version, false );
 
+	if (is_page_template( 'page-contact.php' ) || is_page_template( 'page-registration.php') ) {
+		wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js', array(), '1.0', true );
+	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'baysidecommunity_register_scripts' );
@@ -443,10 +447,38 @@ function get_dropdown_pages() {
 	$option = [];
 	foreach ($pages as $page) {
 		$option[$page->ID] = array($page->post_title);
-	}
+	};
+
 
 	return $option;
 }
+
+
+
+/**
+ * Get option list pages & categories
+ *
+ */
+function get_dropdown_pages_and_categories() {
+	$pages = get_pages();
+
+	$option = [];
+	foreach ($pages as $page) {
+		$option[$page->ID] = array($page->post_title);
+	};
+
+
+	$categories = get_categories();
+
+	foreach ($categories as $category) {
+		$option["cat=" . $category->cat_ID] = array($category->cat_name);
+	};
+
+
+	return $option;
+}
+
+
 
 
 /**
@@ -579,7 +611,175 @@ function contact_submission_email( $post, $subject)
 
 	return wp_mail( $contactEmail ? $contactEmail : get_bloginfo( 'admin_email' ), $subject, $message, $headers );
 }
+function limit_words($string, $word_limit)
+{
+    $words = explode(" ",$string);
+    //if (count($words) > 20) {
+    	$return = implode(" ",array_splice($words,0,$word_limit))." ...";
+    /*} else {
+    	$return = implode(" ",array_splice($words,0,$word_limit));
+    }*/
+    return $return;
+}
+function wpb_list_child_pages($id) { 
 
+	$args = array(
+	    'post_type'      => 'page',
+	    'posts_per_page' => -1,
+	    'post_parent'    => $id,
+	    'order'          => 'ASC',
+	    'orderby'        => 'menu_order'
+	 );
+
+
+	$parent = new WP_Query( $args );
+	return $parent;
+	 
+}
+function custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+function add_current_nav_class($classes, $item) {
+
+      // Getting the current post details
+      global $post;
+
+      // Get post ID, if nothing found set to NULL
+      $id = ( isset( $post->ID ) ? get_the_ID() : NULL );
+
+      // Checking if post ID exist...
+      if (isset( $id )){
+
+          // Getting the post type of the current post
+          $current_post_type = get_post_type_object(get_post_type($post->ID));
+
+          // Getting the rewrite slug containing the post type's ancestors
+          $ancestor_slug = $current_post_type->rewrite ? $current_post_type->rewrite['slug'] : '';
+
+          // Split the slug into an array of ancestors and then slice off the direct parent.
+          $ancestors = explode('/',$ancestor_slug);
+          $parent = array_pop($ancestors);
+
+          // Getting the URL of the menu item
+          $menu_slug = strtolower(trim($item->url));
+
+          // Remove domain from menu slug
+          $menu_slug = str_replace($_SERVER['SERVER_NAME'], "", $menu_slug);
+
+          // If the menu item URL contains the post type's parent
+          if (!empty($menu_slug) && !empty($parent) && strpos($menu_slug,$parent) !== false) {
+              $classes[] = 'current-menu-item';
+          }
+
+          // If the menu item URL contains any of the post type's ancestors
+          foreach ( $ancestors as $ancestor ) {
+              if (!empty($menu_slug) && !empty($ancestor) && strpos($menu_slug,$ancestor) !== false) {
+                  $classes[] = 'current-page-ancestor';
+              }
+          }
+      }
+      // Return the corrected set of classes to be added to the menu item
+      return $classes;
+
+   }
+   add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+
+
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+* get full taxonomy term object by term id
+*
+* @param integer  $term_id  the term to find
+* @param array    $terms    the array of all terms (usualy from get_terms() )
+*/
+
+function get_term_by_term_id($term_id, $terms) {
+	foreach ($terms as $term) {
+		if(isset($term->term_id) && $term->term_id == $term_id) {
+			return $term;
+		}
+	}
+	return false;
+}
+
+/**
+* Recursively sort an array of taxonomy terms hierarchically. Child categories will be
+* placed under a 'children' member of their parent term.
+* @param Array   $cats     taxonomy term objects to sort
+* @param Array   $into     result array to put them in
+* @param integer $parentId the current parent ID to put them in
+*/
+function sort_terms_hierarchicaly(Array &$cats, Array &$into, $parentId = 0)
+{
+		foreach ($cats as $i => $cat) {
+				if ($cat->parent == $parentId) {
+						$into[$cat->term_id] = $cat;
+						unset($cats[$i]);
+				}
+		}
+
+		foreach ($into as $topCat) {
+				$topCat->children = array();
+				sort_terms_hierarchicaly($cats, $topCat->children, $topCat->term_id);
+		}
+}
+
+/**
+*custom excerpt length for home blog section
+*/
+function blog_excerpt_home($limit) {
+  $content = explode(' ', get_the_content(), $limit);
+  if (count($content)>=$limit) {
+    array_pop($content);
+    $content = implode(" ",$content).'...';
+  } else {
+    $content = implode(" ",$content).'...';
+  }	
+  $content = preg_replace('/[+]/','', $content);
+  $content = apply_filters('the_content', $content); 
+  $content = str_replace(']]>', ']]>', $content);
+  return $content;
+}
+
+
+/**
+*blog hit count
+*/
+function getBaysidecommunityPostViews($postID){
+    $count_key = 'count_page_hits';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
+}
+ 
+function setBaysidecommunityPostViews($postID) {
+    $count_key = 'count_page_hits';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+ 
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 /** Butterbean include folder */
 define('BUTTERBEAN', get_template_directory_uri() . '/inc/butterbean/');
 
@@ -628,16 +828,20 @@ require CLASSES_FOLDER . 'class-page.php';
 /**
  * Connect class.
  */
-require CLASSES_FOLDER . 'class-gallery.php';
+//require CLASSES_FOLDER . 'class-gallery.php';
 
 /**
  * Connect class.
  */
-require CLASSES_FOLDER . 'class-faq.php';
+//require CLASSES_FOLDER . 'class-faq.php';
 
 /**
  * blog class.
  */
 require CLASSES_FOLDER . 'class-blog.php';
 
+// Custom comment walker.
+require CLASSES_FOLDER . 'class-baysidecommunity-walker-comment.php';
 
+// Custom page walker.
+require CLASSES_FOLDER . 'class-baysidecommunity-walker-page.php';

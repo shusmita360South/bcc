@@ -10,6 +10,8 @@
 
 $image_id = get_field('body_logo');
 $image_header = wp_get_attachment_image_src($image_id, '700x300');
+
+
 ?>
 
 <section class="program-item">
@@ -28,7 +30,10 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 				<div class="uk-margin-medium-top">
 					<?php the_content() ?>
 				</div>
-				<a class="button btn-green uk-margin-medium-top" href="<?php echo get_page_link(get_field('body_externalbtnlink')) ?>">Register Now</a>
+				<?php if(get_field('body_externalbtnlink')):?>
+					
+					<a class="button btn-blue uk-margin-medium-top" href="<?php echo get_field('body_externalbtnlink') ?>"><?php echo get_field('body_btntext')? get_field('body_btntext') : "Register Now"?></a>
+				<?php endif;?>
 			</div>
 			<div class="uk-width-1-1 uk-width-1-3@s sideinfo_outer">
 				<?php 
@@ -53,12 +58,15 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 									
 								</span>
 								<span class="block">
-									<i class="blue2" uk-icon="clock"></i><?php echo $location['starttime'];?>
+									<i class="blue2" uk-icon="clock"></i><?php echo $location['starttime'];?><?php if($location['starttime']){
+										echo "-".$location['endtime'];
+										}?>
 								</span >
-								
+								<?php if($location['address']):?>
 								<span class="block">
 									<i class="blue2" uk-icon="location"></i><?php echo $location['address'];?>
 								</span>
+								<?php endif;?>
 								<?php if(get_field('body_cost')):?>
 									<span class="block">
 										<i class="blue2 text">$</i><?php echo get_field('body_cost');?>
@@ -80,14 +88,16 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 			        </ul>
 		            <div uk-grid class="card-share uk-child-width-1-2 uk-grid-small">
 		            	<div>
-            				<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_SERVER['REQUEST_URI'];?>"><span uk-icon="icon: facebook"></span>Facebook</a>
+            				<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><span uk-icon="icon: facebook"></span>Facebook</a>
             			</div>
-            			<div>
-            				<a class="share-btn" href="mailto:?subject=<?php echo $item->title ?>&amp;body=<?php echo $_SERVER['REQUEST_URI'];?>" target="_blank" ><span uk-icon="icon: mail"></span> Email </a>
-            			</div>
+            			<?php if(get_field('body_email')):?>
+	            			<div>
+	            				<a class="share-btn" href="mailto:<?php echo get_field('body_email')?>?subject=Bayside Church Event: <?php the_title()?>&amp;body=<?php the_permalink();?>" target="_blank" ><span uk-icon="icon: mail"></span> Email </a>
+	            			</div>
+	            		<?php endif;?>
             		</div>
 
-            		<div class="commingup">
+            		<div class="commingup disabled">
             			<p class="title">Coming Up</p>
 
             			<?php $programs = get_three_programs(get_the_id());?>
@@ -116,9 +126,9 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 <section class="block-1 center section-padding-tb question-bg">
 	<div class="grid-container-small">
 		<div class="block-1-inner">
-			<h2 class="white">Questions?</h2>
+			<h2 class="white">Donate Today</h2>
 			<p class="white short-desc">Our team would love to help! Please feel free to contact us if you need further information about any of our services, groups or facilities.</p>
-			<a class="button btn-white uk-margin-medium-top" href="">Contact Us</a>
+			<a class="button btn-white uk-margin-medium-top" href="<?php echo get_permalink( get_page_by_path( 'donate' ) ); ?>">Donate Today</a>
 		</div>
 	</div>
 </section>
