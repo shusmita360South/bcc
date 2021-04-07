@@ -39,9 +39,13 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 				<?php 
 					$locations = get_field('body_location');
 					//print_r($locations);
+					$collapsible = 'false';
+					if (count($locations) > 1) {
+						$collapsible = 'true';
+					};
 				?>
 				<div class="sideinfo">
-					<ul uk-accordion="collapsible: false">
+					<ul uk-accordion="collapsible: <?php echo $collapsible ?>">
 						<?php foreach ($locations as $location) :?>
 						<?php if($location['datetext']){
 								$date = $location['datetext'];
