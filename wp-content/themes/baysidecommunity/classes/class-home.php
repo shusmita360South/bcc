@@ -306,7 +306,7 @@ if ( ! class_exists( 'ButterBean_Home' ) ) {
 		        	'section' => 'about_section',
 		        	'label'   => esc_html__( 'About Blocks' ),
 		        	'attr'    => array( 'class' => 'widefat' ),
-		        	'choices' => get_dropdown_pages()
+		        	'choices' => get_dropdown_pages_and_categories()
 		        )
 			);
 

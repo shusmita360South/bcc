@@ -1223,6 +1223,7 @@ ul.primary-menu {
 	letter-spacing: -0.0277em;
 	flex-wrap: wrap;
 	justify-content: flex-end;
+	align-items: center;
 	margin: -0.8rem 0 0 -1.6rem;
 }
 

@@ -111,5 +111,5 @@ module.exports = function (grunt) {
   grunt.registerTask('js',  ['concat', 'uglify']);
   grunt.registerTask('css', ['sass', 'concat', 'autoprefixer', 'cssmin']);
 
-  //grunt.registerTask('default', ['js', 'css']);
+  grunt.registerTask('default', ['js', 'css']);
 };
