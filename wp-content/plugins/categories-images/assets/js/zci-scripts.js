@@ -68,5 +68,4 @@ jQuery(document).ready(function($) {
         
         $(".inline-edit-col .title img").attr("src",thumb);
     });
-
 });

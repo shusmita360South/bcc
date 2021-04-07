@@ -328,5 +328,4 @@ if (class_exists('ZCategoriesImages')) {
         $zci = new ZCategoriesImages();
         return $zci->zTaxonomyImage($term_id, $size, $attr, $echo);
     }
-
 }

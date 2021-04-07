@@ -151,9 +151,14 @@ section {position: relative; }
     font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     color: $text-color;
 }
+
+h2 {
+	color: $blue;
+}
+
 h1, .h1 {
 	font-family: $font2;
 	font-size: 59px;
