@@ -105,6 +105,12 @@ class ButterBean_Control_Slider extends ButterBean_Control {
 				$choices['Collection'][$item->ID] = $item->post_title;
 			}
 		}
+
+		if ( $programs = get_posts(array('numberposts' => -1, 'post_type' => 'programs')) ) {
+			foreach ( $programs as $item ) {
+				$choices['Program'][$item->ID] = $item->post_title;
+			}
+		}
 		
 		$this->json['choices'] = $choices;
 

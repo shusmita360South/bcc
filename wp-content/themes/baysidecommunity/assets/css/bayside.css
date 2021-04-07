@@ -164,8 +164,11 @@ section {
   src: url("../fonts/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal; }
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
   color: #505050; }
+
+h2 {
+  color: #0072BC; }
 
 h1, .h1 {
   font-family: "Gilroy";
