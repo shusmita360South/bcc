@@ -202,6 +202,30 @@ class Add_Settings_Field {
 		register_setting( 'general', 'next_church_onine', 'esc_attr' );
 		register_setting( 'general', 'event_header_image', 'esc_attr' );
 
+
+		//	HEADER MENU SETTINGS
+
+		add_settings_section(  
+	        'header_menu_settings',
+	        'Header Menu Settings',
+	        array( $this, 'my_section_options_callback' ),
+	        'general'
+	    );
+
+
+		add_settings_field(
+			'header_donate_button_url',
+			'<label>' . __( 'Header Donate Button URL' , 'header_donate_button_url' ) . '</label>',
+			array( $this, 'text_field' ),
+			'general',
+			'header_menu_settings',
+			array('name'=>'header_donate_button_url')
+		);
+
+
+
+		
+		register_setting( 'general', 'header_donate_button_url', 'esc_attr' );
 		
 	}
 

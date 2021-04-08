@@ -780,6 +780,8 @@ ul.uk-accordion li {
  * Standard Sections
  ************************/
 /* Header / Menu */
+header#site-header .grid-container {
+  padding-right: 0; }
 header#site-header.scrolled {
   border-bottom: 1px solid #E6E6E6; }
 header#site-header .header-titles {
@@ -804,9 +806,7 @@ header#site-header .header-titles-wrapper {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding: 0; }
 header#site-header a:hover {
   text-decoration: none !important; }
 @media only screen and (max-width: 1500px) {
@@ -861,6 +861,36 @@ header#site-header .header-right-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
+  header#site-header .header-right-buttons .donate {
+    height: 100px;
+    line-height: 100px;
+    background: #71BE44;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-decoration: none;
+    padding: 0 30px; }
+    header#site-header .header-right-buttons .donate:hover {
+      opacity: .9; }
+    @media only screen and (max-width: 1550px) {
+      header#site-header .header-right-buttons .donate {
+        padding: 0 20px; } }
+    @media only screen and (max-width: 1350px) {
+      header#site-header .header-right-buttons .donate {
+        padding: 0 10px; } }
+    @media only screen and (max-width: 1279px) {
+      header#site-header .header-right-buttons .donate {
+        display: none; } }
+    header#site-header .header-right-buttons .donate .uk-icon {
+      margin-right: 8px;
+      top: 2px;
+      position: relative; }
+      header#site-header .header-right-buttons .donate .uk-icon svg {
+        width: 15px;
+        height: 15px; }
+        header#site-header .header-right-buttons .donate .uk-icon svg path {
+          fill: #fff; }
   header#site-header .header-right-buttons .church-online {
     height: 100px;
     line-height: 100px;

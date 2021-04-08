@@ -5,7 +5,9 @@
 
 	
 header#site-header {
-
+	.grid-container {
+		padding-right: 0;
+	}
 	
 	&.scrolled {
 		
@@ -35,9 +37,6 @@ header#site-header {
 		display: flex;
 		justify-content: space-between;
 		padding: 0;
-		padding-top: 20px;
-		padding-bottom: 20px;
-
 	}
 	a {
 		&:hover {
@@ -123,6 +122,44 @@ header#site-header {
 	}
 	.header-right-buttons {
 		display: flex;
+		
+		.donate {
+			height: 100px;
+			line-height: 100px;
+			background: $green2;
+			color: $white;
+			font-size: 16px;
+			font-weight: bold;
+			letter-spacing: 0;
+			text-decoration: none;
+			padding: 0 30px;
+			&:hover {
+				opacity: .9;
+			}
+			@media only screen and (max-width: 1550px) {
+				padding: 0 20px;
+			}
+			@media only screen and (max-width: 1350px) {
+				padding: 0 10px;
+			}
+			@media only screen and (max-width: 1279px) {
+				display: none;
+			}
+			.uk-icon {
+				margin-right: 8px;
+				top: 2px;
+				position: relative;
+				svg {
+					width: 15px;
+					height: 15px;
+					path {
+						fill: #fff;
+					}
+				}
+			}
+			
+		}
+
 		.church-online {
 			height: 100px;
 			line-height: 100px;
