@@ -71,7 +71,7 @@
 			
 			<header uk-sticky="offset: 0" id="site-header" class="header-footer-group" role="banner">
 
-				<div class="grid-container">
+
 
 					<div class="header-inner">
 
@@ -234,7 +234,7 @@
 						get_template_part( 'template-parts/modal-search' );
 					}
 					?>
-				</div><!-- .grid-container -->
+
 			</header><!-- #site-header -->
 
 		</div><!-- .container -->
