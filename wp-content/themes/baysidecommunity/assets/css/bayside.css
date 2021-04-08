@@ -793,7 +793,8 @@ header#site-header .header-titles {
     header#site-header .header-titles img {
       width: 200px; } }
 header#site-header .header-inner {
-  padding: 0; }
+  padding: 0;
+  padding-left: 50px; }
   @media only screen and (max-width: 1500px) {
     header#site-header .header-inner {
       padding-left: 15px; } }

@@ -28,7 +28,8 @@ header#site-header {
 	}
 	.header-inner {
 
-    	padding: 0;
+		padding: 0;
+		padding-left: 50px;
     	@media only screen and (max-width: 1500px) {
     		padding-left: 15px;
     	}
