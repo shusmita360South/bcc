@@ -91,6 +91,7 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 							
 			        </ul>
 		            <div uk-grid class="card-share uk-child-width-1-2 uk-grid-small">
+						<h2 class="uk-child-width-1-1">Share</h2>
 		            	<div>
             				<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><span uk-icon="icon: facebook"></span>Facebook</a>
             			</div>

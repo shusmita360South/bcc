@@ -1724,6 +1724,9 @@ header#site-header .toggle-inner .toggle-text {
     display: -ms-flexbox;
     display: flex;
     margin-top: 30px; }
+    .program-item .sideinfo .card-share h2 {
+      width: 100%;
+      margin-bottom: 15px; }
     .program-item .sideinfo .card-share .share-btn {
       background: #EAF9FF;
       color: #00ADEE;
