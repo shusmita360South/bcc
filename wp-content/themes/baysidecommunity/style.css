@@ -1688,8 +1688,11 @@ button.sub-menu-toggle.active svg {
 
 .menu-bottom {
 	flex-shrink: 0;
-	padding: 4rem 0;
+	padding-top: 4rem;
 }
+
+
+
 
 .menu-bottom nav {
 	width: 100%;

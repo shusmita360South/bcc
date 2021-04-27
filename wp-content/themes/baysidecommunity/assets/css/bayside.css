@@ -798,6 +798,9 @@ header#site-header .header-inner {
   @media only screen and (max-width: 1500px) {
     header#site-header .header-inner {
       padding-left: 15px; } }
+  @media only screen and (max-width: 1199px) {
+    header#site-header .header-inner {
+      height: 70px; } }
 header#site-header .header-titles-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -808,6 +811,13 @@ header#site-header .header-titles-wrapper {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0; }
+  @media only screen and (max-width: 1199px) {
+    header#site-header .header-titles-wrapper {
+      height: 100%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 header#site-header a:hover {
   text-decoration: none !important; }
 @media only screen and (max-width: 1500px) {
@@ -880,7 +890,7 @@ header#site-header .header-right-buttons {
     @media only screen and (max-width: 1350px) {
       header#site-header .header-right-buttons .donate {
         padding: 0 10px; } }
-    @media only screen and (max-width: 1279px) {
+    @media only screen and (max-width: 1199px) {
       header#site-header .header-right-buttons .donate {
         display: none; } }
     header#site-header .header-right-buttons .donate .uk-icon {
@@ -941,9 +951,6 @@ header#site-header .header-right-buttons {
     @media only screen and (max-width: 1350px) {
       header#site-header .header-right-buttons .giving {
         padding: 0 10px; } }
-    @media only screen and (max-width: 1279px) {
-      header#site-header .header-right-buttons .giving {
-        display: none; } }
     header#site-header .header-right-buttons .giving .uk-icon {
       margin-right: 8px;
       top: 2px;
@@ -1002,6 +1009,41 @@ header#site-header .toggle-inner .toggle-text {
   padding: 0 15px; }
 .menu-modal button.sub-menu-toggle svg {
   width: 1rem; }
+
+.menu-bottom .mobile-extra-buttons {
+  padding-top: 4rem; }
+
+.mobile-extra-buttons a {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .mobile-extra-buttons a.donate {
+    background: #71BE44;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-decoration: none;
+    padding: 15px 0; }
+    .mobile-extra-buttons a.donate .uk-icon {
+      margin-right: 8px;
+      top: 2px;
+      position: relative; }
+      .mobile-extra-buttons a.donate .uk-icon svg {
+        width: 15px;
+        height: 15px; }
+        .mobile-extra-buttons a.donate .uk-icon svg path {
+          fill: #fff; }
 
 .transition0 {
   transition: all 0s ease-in-out;

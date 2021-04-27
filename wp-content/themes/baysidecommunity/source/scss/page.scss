@@ -805,6 +805,10 @@
 		.card-share {
 			display: flex;
 			margin-top: 30px;
+			h2 {
+				width: 100%;
+				margin-bottom: 15px;
+			}
 			.share-btn {
 				background: $light-blue-bg;
 				color: $blue2;

@@ -33,11 +33,20 @@ header#site-header {
     	@media only screen and (max-width: 1500px) {
     		padding-left: 15px;
     	}
+		@media only screen and (max-width: 1199px) {
+			height: 70px;
+		}
    	}
 	.header-titles-wrapper {
 		display: flex;
 		justify-content: space-between;
 		padding: 0;
+
+
+		@media only screen and (max-width: 1199px) {
+			height: 100%;
+			align-items: center;
+		}
 	}
 	a {
 		&:hover {
@@ -143,7 +152,7 @@ header#site-header {
 			@media only screen and (max-width: 1350px) {
 				padding: 0 10px;
 			}
-			@media only screen and (max-width: 1279px) {
+			@media only screen and (max-width: 1199px) {
 				display: none;
 			}
 			.uk-icon {
@@ -217,7 +226,7 @@ header#site-header {
 				padding: 0 10px;
 			}
 			@media only screen and (max-width: 1279px) {
-				display: none;
+				//display: none;
 			}
 			.uk-icon {
 				margin-right: 8px;
@@ -304,3 +313,40 @@ header#site-header {
 }
 
 
+
+
+
+.menu-bottom .mobile-extra-buttons {
+	padding-top: 4rem;
+}
+
+
+.mobile-extra-buttons a {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+
+	&.donate {
+		background: $green2;
+		color: $white;
+		font-size: 16px;
+		font-weight: bold;
+		letter-spacing: 0;
+		text-decoration: none;
+		padding: 15px 0;
+		.uk-icon {
+			margin-right: 8px;
+			top: 2px;
+			position: relative;
+			svg {
+				width: 15px;
+				height: 15px;
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
