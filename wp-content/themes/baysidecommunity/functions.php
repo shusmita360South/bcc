@@ -208,6 +208,11 @@ function baysidecommunity_register_scripts() {
 		wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js', array(), '1.0', true );
 	}
 
+	if (is_page_template( 'page-donate.php' ) ) {
+		wp_enqueue_script( 'tithely', 'https://tithe.ly/widget/v3/give.js?3', array(), '1.0', true );
+	}
+	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'baysidecommunity_register_scripts' );
@@ -813,6 +818,11 @@ require CLASSES_FOLDER . 'class-programs.php';
  * People class.
  */
 require CLASSES_FOLDER . 'class-people.php';
+
+/**
+ * Donate class.
+ */
+require CLASSES_FOLDER . 'class-donate.php';
 
 /**
  * Home class.

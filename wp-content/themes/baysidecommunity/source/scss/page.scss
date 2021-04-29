@@ -614,6 +614,33 @@
 		text-align: center;
 	}
 }
+
+.program-card.donate-card {
+	
+	cursor: pointer;
+
+	transition: transform .15s ease-in-out !important;
+	
+	&:hover {
+		transform: scale(1.025);
+	}
+
+	.donate-card-heading {
+		padding: 15px 30px;
+		h3 {
+			color: $white;
+			margin-bottom: 0;
+		}
+		background-color: $green2;
+	}
+
+	.content {
+		
+	}
+
+}
+
+
 .program-card.people-card {
 	.content {
 		padding-bottom: 70px;
@@ -632,6 +659,8 @@
 	}
 
 }
+
+
 .program-card.blog-card {
 	.info {
 		span {

@@ -10,7 +10,7 @@
 
 
 get_header();
-$peoples = get_people();
+$donates = get_all_donates();
 ?>
 <section class="page-default container">
 	<div class="">
@@ -28,11 +28,11 @@ $peoples = get_people();
 		<div class="grid-container">
 			<div uk-grid>
 				
-				<?php if ($peoples->have_posts()) :
+				<?php if ($donates->have_posts()) :
 					$count = 1;
 					
-						while ( $peoples->have_posts() ) {
-							$peoples->the_post();
+						while ( $donates->have_posts() ) {
+							$donates->the_post();
 							get_template_part( 'template-parts/content/content', 'donate-card' );
 						}
 						wp_reset_postdata(); 
@@ -56,7 +56,17 @@ $peoples = get_people();
 		</section>
 	<?php endif; ?>
 
+
+
+
 </section>	
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 <?php
 get_footer();
+
+
+?>
+<script>
+	//	START THE TITHELY WIDGET
+	var tw = create_tithely_widget();
+</script>

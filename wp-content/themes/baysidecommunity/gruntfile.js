@@ -54,6 +54,7 @@ module.exports = function (grunt) {
             expand: true, 
             src: [ 
               '**',
+              '<%= globalConfig.public_html %>/img/**/*.*',
               '!node_modules/**',
               '!.sass-cache/**',
               '!grunt/**',

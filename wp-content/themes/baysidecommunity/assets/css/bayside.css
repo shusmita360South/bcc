@@ -1615,6 +1615,23 @@ header#site-header .toggle-inner .toggle-text {
   padding: 10px 20px;
   text-align: center; }
 
+.program-card.donate-card {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .15s ease-in-out !important;
+       -o-transition: -o-transform .15s ease-in-out !important;
+          transition: transform .15s ease-in-out !important; }
+  .program-card.donate-card:hover {
+    -webkit-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+         -o-transform: scale(1.025);
+            transform: scale(1.025); }
+  .program-card.donate-card .donate-card-heading {
+    padding: 15px 30px;
+    background-color: #71BE44; }
+    .program-card.donate-card .donate-card-heading h3 {
+      color: #FFF;
+      margin-bottom: 0; }
+
 .program-card.people-card .content {
   padding-bottom: 70px; }
 .program-card.people-card .uk-icon-button {
