@@ -6,6 +6,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
@@ -24,6 +26,18 @@ module.exports = function (grunt) {
   grunt.initConfig({
     // Config Variable
     globalConfig: globalConfig,
+
+
+
+
+    wordpress_root_dir : 'C:/wamp64/www/360South/dev.bcc.local/',
+    wordpress_theme_name : 'baysidecommunity',
+    build_www_dir : '<%= wordpress_root_dir %>/wp-content/themes/<%= wordpress_theme_name %>/',
+
+    
+
+
+
     sass: {
       dist: {
         files: {
@@ -31,6 +45,27 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    copy: {
+      local_development: {
+        files: [
+          {
+            cwd: '',
+            expand: true, 
+            src: [ 
+              '**',
+              '!node_modules/**',
+              '!.sass-cache/**',
+              '!grunt/**',
+              '!source/**',
+            ],
+            dest: '<%= build_www_dir %>'
+          },
+        ]
+      },
+    },
+
+
     autoprefixer: {
       options: {
         browsers: configBridge.config.autoprefixerBrowsers
@@ -105,11 +140,27 @@ module.exports = function (grunt) {
         files: ['<%= globalConfig.source %>/js/vendor/*.js', '<%= globalConfig.source %>/js/<%= globalConfig.javascript %>.js'],
         tasks: ['js']
       },
+
+
+      local_development: {
+        files: [
+          '<%= globalConfig.source %>/scss/**', 
+          '<%= globalConfig.source %>/js/**',
+          '<%= globalConfig.source %>/**/*.php',
+          '<%= globalConfig.source %>/*.css'
+        ],
+        tasks: ['js', 'css', 'copy:local_development']
+      },
     },
   });
 
   grunt.registerTask('js',  ['concat', 'uglify']);
   grunt.registerTask('css', ['sass', 'concat', 'autoprefixer', 'cssmin']);
 
+  grunt.registerTask('css', ['sass', 'concat', 'autoprefixer', 'cssmin']);
+
   grunt.registerTask('default', ['js', 'css']);
+
+  grunt.registerTask('local-development', ['js', 'css', 'copy:local_development', 'watch:local_development']);
+
 };

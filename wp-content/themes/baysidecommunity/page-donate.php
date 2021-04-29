@@ -33,7 +33,7 @@ $peoples = get_people();
 					
 						while ( $peoples->have_posts() ) {
 							$peoples->the_post();
-							get_template_part( 'template-parts/content/content', 'people' );
+							get_template_part( 'template-parts/content/content', 'donate-card' );
 						}
 						wp_reset_postdata(); 
 				endif;?>
