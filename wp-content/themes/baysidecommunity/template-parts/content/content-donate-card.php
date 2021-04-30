@@ -9,6 +9,7 @@
 					<?php the_title(); ?>
 				</h3>
 			</div>
+			<img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" alt="">
 			<div class="content">				
 				<?php the_content();?>
 			</div>
