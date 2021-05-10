@@ -460,6 +460,17 @@
   			background: rgba(0,0,0,0.4);
 		}
 }
+
+.program-social-icon {
+	display: inline-block;
+	.uk-icon {
+		svg {
+			width: 30px;
+		}
+	}
+}
+
+
 .program-card {
 	border-radius: 10px;
 	overflow: hidden;
@@ -619,6 +630,10 @@
 	
 	cursor: pointer;
 
+	position: relative;
+	padding-bottom: 85px;
+		
+
 	transition: transform .15s ease-in-out !important;
 	
 	&:hover {
@@ -635,7 +650,17 @@
 	}
 
 	.content {
-		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.button-row {
+		text-align: right;
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
+		right: 30px;
 	}
 
 }

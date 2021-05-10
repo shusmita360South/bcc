@@ -13,6 +13,11 @@
 			<div class="content">				
 				<?php the_content();?>
 			</div>
+
+			<div class="button-row">
+				<div class="button">Donate Now</div>
+			</div>
+
 		</div>
 	</div>
 

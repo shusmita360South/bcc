@@ -25,6 +25,16 @@ $donates = get_all_donates();
 	?>
 
 	<section class="donate-archive section-padding-tb light-bg">
+		<div class="grid-container-small section-padding-bottom">
+			<h2>
+				Donate Today
+			</h2>
+			<div class="block-1-inner">
+				<?php the_content(); ?>
+			</div>		
+		</div>
+
+
 		<div class="grid-container">
 			<div uk-grid>
 				

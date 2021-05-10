@@ -1490,6 +1490,11 @@ header#site-header .toggle-inner .toggle-text {
     height: 100%;
     background: rgba(0, 0, 0, 0.4); }
 
+.program-social-icon {
+  display: inline-block; }
+  .program-social-icon .uk-icon svg {
+    width: 30px; }
+
 .program-card {
   border-radius: 10px;
   overflow: hidden;
@@ -1617,6 +1622,8 @@ header#site-header .toggle-inner .toggle-text {
 
 .program-card.donate-card {
   cursor: pointer;
+  position: relative;
+  padding-bottom: 85px;
   -webkit-transition: -webkit-transform .15s ease-in-out !important;
        -o-transition: -o-transform .15s ease-in-out !important;
           transition: transform .15s ease-in-out !important; }
@@ -1631,6 +1638,26 @@ header#site-header .toggle-inner .toggle-text {
     .program-card.donate-card .donate-card-heading h3 {
       color: #FFF;
       margin-bottom: 0; }
+  .program-card.donate-card .content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .program-card.donate-card .button-row {
+    text-align: right;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px; }
 
 .program-card.people-card .content {
   padding-bottom: 70px; }
