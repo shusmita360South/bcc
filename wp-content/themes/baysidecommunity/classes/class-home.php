@@ -96,7 +96,7 @@ if ( ! class_exists( 'ButterBean_Home' ) ) {
 			$banner->register_section(
 		        'note',
 		        array(
-		        	'label' => esc_html__( 'Notes' ),
+		        	'label' => esc_html__( 'Site Notices' ),
 					'icon'  => ''
 				)
 			);
@@ -260,7 +260,7 @@ if ( ! class_exists( 'ButterBean_Home' ) ) {
 		        array(
 		        	'type'    => 'text',
 		        	'section' => 'note',
-		        	'label'   => esc_html__( 'Text 1' ),
+		        	'label'   => esc_html__( 'Site Notice (Below Header Menu & Above Hero Slider)' ),
 		        	'attr'    => array( 'class' => 'widefat' )
 		        )
 			);
@@ -269,7 +269,7 @@ if ( ! class_exists( 'ButterBean_Home' ) ) {
 		        array(
 		        	'type'    => 'text',
 		        	'section' => 'note',
-		        	'label'   => esc_html__( 'Text 2' ),
+		        	'label'   => esc_html__( 'Site Notice (Below Hero Slider)' ),
 		        	'attr'    => array( 'class' => 'widefat' )
 		        )
 			);

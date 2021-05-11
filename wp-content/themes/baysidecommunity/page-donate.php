@@ -25,7 +25,7 @@ $donates = get_all_donates();
 	?>
 
 	<section class="donate-archive section-padding-tb light-bg">
-		<div class="grid-container-small section-padding-bottom">
+		<div class="grid-container-small center section-padding-bottom">
 			<h2>
 				Donate Today
 			</h2>
@@ -67,7 +67,9 @@ $donates = get_all_donates();
 	<?php endif; ?>
 
 
-
+	<?php if(get_field('body_content')): ?>
+		<?php get_template_part( 'template-parts/content/content', 'pagecontent2cols' );?>
+	<?php endif;?>
 
 </section>	
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>

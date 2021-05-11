@@ -6,7 +6,11 @@ $headerBgColor = "#FFFFFF";
 
 ?>
 <div class="container">
-	<section class="top-note"><?php the_field('note_text1') ?><span uk-close></span></section>
+
+	<?php if(get_field('note_text1')): ?>
+		<section class="top-note"><?php the_field('note_text1') ?><span uk-close></span></section>
+	<?php endif; ?>
+
 	<section class="hero">
 		<?php if ($sliders = get_field('hero_slider', get_the_ID())) : ?>
 			<div class="hero-slider owl-carousel">
