@@ -465,7 +465,12 @@
 	display: inline-block;
 	.uk-icon {
 		svg {
+			color: $blue;
 			width: 30px;
+
+			&:hover {
+				color: $blue2;
+			}
 		}
 	}
 }

@@ -52,6 +52,12 @@ $donates = get_all_donates();
 			
 	</section>
 
+
+	<?php if(get_field('body_content')): ?>
+		<?php get_template_part( 'template-parts/content/content', 'pagecontent2cols' );?>
+	<?php endif;?>
+
+
 	<?php if ( get_field('ctabottom_heading') ) : ?>
 		<section class="block-1 center section-padding-tb ctabottom-bg">
 			<div class="grid-container-small">
@@ -67,9 +73,6 @@ $donates = get_all_donates();
 	<?php endif; ?>
 
 
-	<?php if(get_field('body_content')): ?>
-		<?php get_template_part( 'template-parts/content/content', 'pagecontent2cols' );?>
-	<?php endif;?>
 
 </section>	
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>

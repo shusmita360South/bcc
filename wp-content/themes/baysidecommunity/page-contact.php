@@ -46,7 +46,7 @@ $phonemedia = get_option('contact_phonemedia');
 
 				<span class="icon-outer blue-bg uk-margin-small-top"><span uk-icon="icon: mail"></span></span>
 				<p class="title">Email</p>
-				<p><a href="mailto:+<?php echo $email; ?>"><?php echo $email; ?></a></p>
+				<p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
 
 				<?php 
 					if ($phonecare != '') {

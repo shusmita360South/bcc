@@ -232,7 +232,13 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 				)
 			);
 			
-			
+			$body->register_section(
+		        'ctabottom_section',
+		        array(
+		        	'label' => esc_html__( 'CTA Bottom' ),
+					'icon'  => ''
+				)
+			);
 			
 		}
 
@@ -288,6 +294,25 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 			);
 			
 			
+			$body->register_setting(
+				'ctabottom_heading'
+			);
+
+			$body->register_setting(
+				'ctabottom_image'
+			);
+
+			$body->register_setting(
+				'ctabottom_short_description'
+			);
+
+			$body->register_setting(
+				'ctabottom_button_link'
+			);
+
+			$body->register_setting(
+				'ctabottom_button_text'
+			);
 			
 		}
 
@@ -414,7 +439,62 @@ if ( ! class_exists( 'ButterBean_Program' ) ) {
 			
 			
 
+			$body->register_control(
+		        'ctabottom_heading',
+		        array(
+		        	'type'    => 'text',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'Heading' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
 
+			$body->register_control(
+		        'ctabottom_image',
+		        array(
+		        	'type'    => 'image',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'image' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
+
+			$body->register_control(
+		        'ctabottom_short_description',
+		        array(
+		        	'type'    => 'textarea',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'Short Description' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
+
+			$body->register_control(
+		        'ctabottom_button_link',
+		        array(
+		        	'type'    => 'select-group',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'Button Link' ),
+		        	'attr'    => array( 'class' => 'widefat' ),
+		        	'choices' => array(
+		        		'' => esc_html__( '- Select Page -' ),
+		        		array(
+			        		'label'   => esc_html__( 'Pages' ),
+			        		'choices' => get_dropdown_pages()
+		        		)
+		        	)
+		        )
+			);
+
+			$body->register_control(
+		        'ctabottom_button_text',
+		        array(
+		        	'type'    => 'text',
+		        	'section' => 'ctabottom_section',
+		        	'label'   => esc_html__( 'Button Text' ),
+		        	'attr'    => array( 'class' => 'widefat' )
+		        )
+			);
 			
 
 		}

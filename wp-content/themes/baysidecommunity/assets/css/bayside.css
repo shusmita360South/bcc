@@ -1493,7 +1493,10 @@ header#site-header .toggle-inner .toggle-text {
 .program-social-icon {
   display: inline-block; }
   .program-social-icon .uk-icon svg {
+    color: #0072BC;
     width: 30px; }
+    .program-social-icon .uk-icon svg:hover {
+      color: #00ADEE; }
 
 .program-card {
   border-radius: 10px;

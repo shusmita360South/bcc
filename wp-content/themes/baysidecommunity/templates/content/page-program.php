@@ -128,12 +128,27 @@ $image_header = wp_get_attachment_image_src($image_id, '700x300');
 </section>
 
 
-<section class="block-1 center section-padding-tb question-bg">
-	<div class="grid-container-small">
-		<div class="block-1-inner">
-			<h2 class="white">Donate Today</h2>
-			<!-- <p class="white short-desc">Our team would love to help! Please feel free to contact us if you need further information about any of our services, groups or facilities.</p> -->
-			<a class="button btn-white uk-margin-medium-top" href="<?php echo get_permalink( get_page_by_path( 'donate' ) ); ?>">Donate</a>
-		</div>
-	</div>
-</section>
+<?php if ( get_field('ctabottom_heading') ) : ?>
+		<?php 
+			$image_header = wp_get_attachment_image_src(get_field('ctabottom_image'), '1920x420');
+			if ($image_header) {
+				$ctabottomBg = $image_header[0];
+
+			} else {
+				$ctabottomBg = "../img/exploringfaith.jpg";
+			}
+
+		?>
+		<section class="block-1 center section-padding-tb ctabottom-bg" style="background-image: url(<?php echo $ctabottomBg?>);">
+			<div class="grid-container-small">
+				<div class="block-1-inner">
+					<h2 class="white"><?php the_field('ctabottom_heading') ?></h2>
+					<p class="white short-desc"><?php echo nl2br(get_field('ctabottom_short_description')) ?></p>
+					<a class="button btn-white uk-margin-medium-top" href="<?php echo get_the_permalink(get_field('ctabottom_button_link')) ?>"><?php the_field('ctabottom_button_text') ?></a>
+
+
+				</div>
+			</div>
+		</section>
+	<?php endif; ?>
+

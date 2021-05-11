@@ -147,7 +147,8 @@ module.exports = function (grunt) {
         files: [
           '<%= globalConfig.source %>/scss/**', 
           '<%= globalConfig.source %>/js/**',
-          '<%= globalConfig.source %>/**/*.php',
+          '/template/*.php',
+          '/template-parts/*.php',
           '<%= globalConfig.source %>/*.css'
         ],
         tasks: ['js', 'css', 'copy:local_development']
