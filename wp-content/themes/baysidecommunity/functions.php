@@ -522,7 +522,7 @@ function contact_submission($subject)
 
 		$post_data = http_build_query(
 		    array(
-		        'secret'   => "6LdtKtEaAAAAAJCs6GJJpgFV3rGEwCBgRJuyc231",
+		        'secret'   => "6LdrLdEaAAAAAAnVThHc67wQuGU3Y5DvyIcpUIud",
 		        'response' => $post['recaptcha'],
 		        'remoteip' => $_SERVER['REMOTE_ADDR']
 		    )
@@ -540,7 +540,7 @@ function contact_submission($subject)
 		$result   = json_decode( $response );
 
 		if( !$result->success )
-			$submission['recaptcha'] = 'Gah! CAPTCHA verification failed. Please try again.';
+			$submission['recaptcha'] = 'CAPTCHA verification failed. Please try again.';
 
 
 		if ( empty( $submission ) )

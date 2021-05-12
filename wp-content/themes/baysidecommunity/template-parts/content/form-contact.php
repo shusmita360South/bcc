@@ -26,7 +26,7 @@
 				<?php elseif( isset( $submission['recaptcha'] ) ) : ?>
 					<p class="c-error-message c-message big center red"><?php echo $submission['recaptcha']; ?></p>
 					<div class="center uk-margin-large-top">
-						<a class="button" href="/contact">Contact</a>
+						<a class="button" href="/contact-us">Contact</a>
 					</div>
 					<style>
 							.block-1-inner{
@@ -68,7 +68,7 @@
 							</div>
 							<div class="center uk-margin-medium-top">
 
-								<div class="g-recaptcha" data-sitekey="6LdtKtEaAAAAAAJz1CUltWX2HiksCRj66OtvRPm1"></div>
+								<div class="g-recaptcha" data-sitekey="6LdrLdEaAAAAAFm7mW4WxDbl5zDH_eg3NVYQAcfu"></div>
 								<?php if( isset( $submission['recaptcha'] ) ) : ?>
 					            	<div id="recaptcha-error" class="error"><?php echo $submission['recaptcha']; ?></div>
 					        	<?php endif; ?>
