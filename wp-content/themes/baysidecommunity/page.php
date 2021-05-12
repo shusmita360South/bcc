@@ -47,9 +47,7 @@ get_header();
 				<div class="block-1-inner">
 					<h2 class="white"><?php the_field('ctabottom_heading') ?></h2>
 					<p class="white short-desc"><?php echo nl2br(get_field('ctabottom_short_description')) ?></p>
-					<a class="button btn-white uk-margin-medium-top" href="<?php echo get_the_permalink(the_field('ctabottom_button_link')) ?>"><?php the_field('ctabottom_button_text') ?></a>
-
-
+					<a class="button btn-white uk-margin-medium-top" href="<?php echo get_the_permalink(get_field('ctabottom_button_link')) ?>"><?php the_field('ctabottom_button_text') ?></a>
 				</div>
 			</div>
 		</section>

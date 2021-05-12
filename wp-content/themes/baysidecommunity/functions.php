@@ -522,7 +522,7 @@ function contact_submission($subject)
 
 		$post_data = http_build_query(
 		    array(
-		        'secret'   => "6LccwS8UAAAAAEF1lq8lc7Y6Wsmnol1EWtQBmQHm",
+		        'secret'   => "6LdtKtEaAAAAAJCs6GJJpgFV3rGEwCBgRJuyc231",
 		        'response' => $post['recaptcha'],
 		        'remoteip' => $_SERVER['REMOTE_ADDR']
 		    )

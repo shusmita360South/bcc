@@ -94,11 +94,31 @@ class ButterBean_Control_Slider extends ButterBean_Control {
 			}
 		}
 
+
+		//	ADDING ABILITY TO SELECT CATEGORIES AS WELL AS PAGES
+
 		if ( $pages = get_pages() ) {
+
+			foreach ($pages as $page) {
+				$choices['Pages'][$page->ID] = array($page->post_title);
+			};
+
+
+			$categories = get_categories();
+
+			foreach ($categories as $category) {
+				$choices['Pages']["cat=" . $category->cat_ID] = array($category->cat_name);
+			};
+
+		}
+
+
+
+		/* if ( $pages = get_pages() ) {
 			foreach ( $pages as $page ) {
 				$choices['Pages'][$page->ID] = $page->post_title;
 			}
-		}
+		} */
 
 		if ( $collection = get_posts(array('numberposts' => -1, 'post_type' => 'collection')) ) {
 			foreach ( $collection as $item ) {

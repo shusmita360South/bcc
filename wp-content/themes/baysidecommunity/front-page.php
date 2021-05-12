@@ -47,6 +47,8 @@ $headerBgColor = "#FFFFFF";
 	<?php endif; ?>
 
 
+
+
 	<?php if ( get_field('about_heading') ) : ?>
 		<section class="block-1 center section-padding-tb">
 			<div class="grid-container-small">
@@ -56,80 +58,57 @@ $headerBgColor = "#FFFFFF";
 					<?php if( get_field('about_button_link') ) : ?>
 						<a class="button-arrow-dark" href="<?php echo get_page_link(get_field('about_button_link')) ?>"><?php the_field('about_button_text'); ?></a>	
 					<?php endif; ?>	
+				</div>
+			<div class="grid-container-small">
 					<?php if ($about_blocks = get_field('about_blocks', get_the_ID())) : 
-						$about_blocks_counts = 0;
-
-						?>
+						$about_blocks_counts = 0;?>
 						<div class="about_blocks" uk-grid>
-							<?php foreach($about_blocks as $about_block_id) :
+							<?php foreach($about_blocks as $about_block) :
 								$about_blocks_counts++; 
 								if ($about_blocks_counts == 1 || $about_blocks_counts==2) {
 									$ukWidth = "uk-width-1-1 uk-width-1-2@s";
 								} else {
 									$ukWidth = "uk-width-1-1 uk-width-1-3@s";
+								}
+
+
+								//	CHECK IF THIS ABOUT BLOCK IS A POST CATEGORY
+								if (strpos($about_block['button_link'], 'cat') !== false) {
+									$page_link_url = get_site_url() . '/?' . $about_block['button_link'];
+								} else {
+									$cat_id = -1;
+									$page_link_url =  get_the_permalink($about_block['button_link']);
 								};
 
-
-
-								$about_block_post = new WP_Query('page_id='.$about_block_id);
 								
-								while ($about_block_post->have_posts()) : $about_block_post->the_post();
+								
+								
 
-									//	CHECK IF THIS ABOUT BLOCK IS A POST CATEGORY
-									if (strpos($about_block_id, 'cat') !== false) {
-										$cat_id = substr($about_block_id, strpos($about_block_id, "=") + 1); 
-
-										$about_block_title = get_cat_name($cat_id);
-										$about_block_thumbnail_image = '<img src="' . z_taxonomy_image_url($cat_id, '460x300') . '" alt="' . $about_block_title . '" />';
-										$page_link_url = get_site_url() . '/?' . $about_block_id;
-
-									} else {
-										$cat_id = -1;
-										$page_link_url = get_page_link();
-									};
-
-									
 							?>
-								
-								
-							
-								<?php //$image_header = wp_get_attachment_image_src($about_block['image_id'], '460x300');?>
+								<?php //echo get_the_permalink($about_block['button_link']);?>
+
+								<?php $image_header = wp_get_attachment_image_src($about_block['image_id'], '460x300');?>
 								<div class="<?php echo $ukWidth;?> uk-margin-medium-top">
 									<div class="about_block">
 										<a href="<?php echo $page_link_url ?>">
-								           	<?php 
-												if ($cat_id == -1) {
-													the_post_thumbnail( '460x300' );
-												} else {
-													echo $about_block_thumbnail_image;
-												};
-										   	?>	
+								            <img class="" src="<?php echo $image_header[0]; ?>" title="<?php echo $about_block['heading'] ?>" alt="<?php echo $about_block['heading'] ?>">
 								           
 								            <div class="slide-content">
-												<h4>
-												<?php 
-													if ($cat_id == -1) {
-														the_title();
-													} else {
-														echo $about_block_title;
-													};
-												?>
-												</h4>
+												<h4><?php echo nl2br($about_block['heading']) ?></h4>
 												
 											</div>
 										</a>
 									</div>
 									
 								</div>
-							<?php endwhile; ?>
-							<?php wp_reset_postdata(); ?>
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
-				</div>
+				
 			</div>
 		</section>
 	<?php endif; ?>
+
 
 	<section class="home-feature blue-light-bg section-padding-tb">
 		<?php if ($features = get_field('home_feature', get_the_ID())) :?>

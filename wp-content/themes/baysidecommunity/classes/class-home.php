@@ -302,13 +302,22 @@ if ( ! class_exists( 'ButterBean_Home' ) ) {
 			$homebody->register_control(
 		        'about_blocks',
 		        array(
+		        	'type'    => 'slider',
+		        	'section' => 'about_section',
+		        	'label'   => esc_html__( 'Slider' )
+		        )
+			);
+
+			/* $homebody->register_control(
+		        'about_blocks',
+		        array(
 		        	'type'    => 'multi_select',
 		        	'section' => 'about_section',
 		        	'label'   => esc_html__( 'About Blocks' ),
 		        	'attr'    => array( 'class' => 'widefat' ),
 		        	'choices' => get_dropdown_pages_and_categories()
 		        )
-			);
+			); */
 
 			$homebody->register_control(
 		        'about_button_link',

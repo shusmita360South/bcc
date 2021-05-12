@@ -68,7 +68,7 @@
 							</div>
 							<div class="center uk-margin-medium-top">
 
-								<div class="g-recaptcha" data-sitekey="6LccwS8UAAAAAMV_c_7n4zVmDAgudcf2PVf88_tn"></div>
+								<div class="g-recaptcha" data-sitekey="6LdtKtEaAAAAAAJz1CUltWX2HiksCRj66OtvRPm1"></div>
 								<?php if( isset( $submission['recaptcha'] ) ) : ?>
 					            	<div id="recaptcha-error" class="error"><?php echo $submission['recaptcha']; ?></div>
 					        	<?php endif; ?>
